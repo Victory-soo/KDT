@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .parent{
+            background-color: skyblue;
+            width: calc(100vh-20vw);
+            /* vw(view-width) : 보이는 화면의 100% 너비*/
+
+            height: calc(100vh-20vw);
+            /* vh(view-height) : 보이는 화면의 100% 높이 */
+
+            /* px : 픽셀 */
+            /* % : 부모 크기의 상대적 백분율 */
+
+            font-size: 1.5rem;
+            /* em : 직계 부모 요소의 폰트 크기 */
+            /* rem : 루트 요소의 폰트 크기 16 */
+        }
+
+        .child{
+            background-color: orange;
+
+            /* max-width: 100px; */
+            /* max-width : 최대 크기 */
+
+            min-width: 700px;
+            /* min-width : 최소 크기 (부모보다 더 크게도 가능) */
+            
+            font-size: 1.5em;
+            height: 100px;
+            line-height: 100px;
+            /* 글자 수직 중앙 정렬(박스 크기의 중앙으로) */
+            /* 내용이 한줄 일 때만 */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">parent
+        <div class="child">child</div>
+    </div>
+</body>
+</html>
