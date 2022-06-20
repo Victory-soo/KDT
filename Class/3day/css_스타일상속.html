@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .parent{
+            width:400px;
+            height: 200px;
+            background-color: lightcoral;
+            border: 5px solid #000;
+        }
+
+        .child{
+            width:inherit;
+            /* inherit 하면 부모의 스타일을 상속받음 */
+            height: 100px;
+            background-color: orange ;
+            border: inherit;
+
+            /* width : 자동 상속 O
+               height : 자동 상속 X  */
+
+            /* 선택자 우선순위 */
+            /* 1. !important = 9999999
+               2. 인라인 = 1000
+               3. #id = 100
+               4. .class = 10
+               5. tag = 1점
+               6. * = 0점 */
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">부모
+        <div class="child">자식</div>
+    </div>
+</body>
+</html>
