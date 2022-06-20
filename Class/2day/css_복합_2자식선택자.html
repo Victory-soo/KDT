@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul>.orange{
+            background-color: pink;
+        }
+
+        div>ol>li{
+            background-color: red;
+        }
+
+        div>ol>#carrot{
+            color:brown;
+        }
+        /* (직계)자식 선택자 Child COmbinator */
+
+
+        div .orange{
+            background-color: gray;
+        }
+
+        div #carrot{
+            background-color: orange;
+        }
+        /* 후손(하위) 선택자 Descendant Combinator */
+
+        
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+        </ul>
+        <ol>
+            <li>상추</li>
+            <li>오이</li>
+            <li id="carrot">당근</li>
+        </ol>
+    </div>
+    <div>토마토</div>
+    <p>피망</p>
+    <span>파프리카</span>
+</body>
+</html>

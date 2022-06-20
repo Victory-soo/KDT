@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스선택자</title>
+
+    <style>
+        .animal>li:first-child{
+            background-color: skyblue;
+        }
+
+        /* 범위:첫번째 */
+
+
+        .animal>li:last-child{
+            background-color: red;
+        }
+        /* 범위:마지막 */
+
+
+        .animal>*:nth-child(3n+1){
+            background-color: gray;
+        }
+        /* 범위:원하는 n번째(2n 3n+1 이런 것도 가능) */
+        /* n은 0부터 대입 */
+        /* 질문 */
+
+        /* .animal *:not(.test){ */
+            /* background-color: orange; */
+        /* } */
+        /* 범위:not(.클래스 or #id) */
+
+    </style>
+</head>
+<body>
+    <ol class="animal">
+        <li>원숭이</li>
+        <li>코뿔소</li>
+        <li>사자</li>
+        <li>코끼리</li>
+        <li>늑대</li>
+    </ol>
+    
+</body>
+</html>

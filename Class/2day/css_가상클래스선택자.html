@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스 선택자</title>
+    <style>
+        a:hover{
+            color:orange;
+            font-size:30px;
+        }
+        /* 커서가 올라가 있는 동안의 변화 */
+
+        a:active{
+            font-weight:bold;
+        }
+        /* 커서로 클릭 하고있는 동안의 변화 */
+
+        input:focus{
+            background-color: gray;
+        }
+        /* input창에 커서로 선택중일 때 변화 */
+
+        div{
+            width : 200px;
+            height: 300px;
+            background-color: red;
+        }
+
+        div:focus{
+            transition:1;
+            width:300px;
+            height:500px;
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <a href="https://naver.com">네이버</a>
+    <br>
+    <input type="text">
+    <br>
+    <div tabindex="-1"></div>
+    <!-- div는 포커스 하지 못하지만 강제 설정 -->
+</body>
+</html>

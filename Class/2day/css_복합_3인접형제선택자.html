@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .orange + p{
+            background-color: yellow;
+        }
+
+        .orange+li{ 
+            color:white; /*표시안됨 바로 다음이 p태그라 */
+        }
+
+        /* 인접 형제 선택자 (Adjacent Sibling Combinator) */
+        /* 선택한 것 바로 다음거 하나만 */
+
+
+        .orange ~ li{
+            background-color: blue;
+        }
+        /* 일반 형제 선택자 (General Sibling Combinator) */
+        /* 선택한 것 다음거 모두 */
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>딸기</li>
+        <li>수박</li>
+        <li class="orange">오렌지</li>
+        <p>건너뛰기</p>
+        <li>망고</li>
+        <pre>건너뛰기</pre>
+        <li>사과</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color:red;
+        }
+        /* "*" 별선택자는 전체 태그 선택 */
+
+        li {
+            color:blue;
+        }
+        /* "태그" 적으면 해당 태그 전부 선택 */
+
+        .dice {
+            background-color: black;
+        }
+        /* ".클래스명" 해당 클래스 선택*/
+
+        #only {
+            background-color: aquamarine;
+        }
+        /* "# id명" 문서내 id는 오직 한개만 존재, 1. id / 2.class 순서 */
+    </style>
+
+</head>
+<body>
+    <h1 class="dice">1</h1>
+    <p id="only">12</p>
+    <pre>123</pre>
+    <span>1234</span>
+    <ul>
+        <li>12345
+            <ol>
+                <li>123456</li>
+                <li>1234567</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+</html>

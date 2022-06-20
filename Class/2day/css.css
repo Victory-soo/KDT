@@ -1,0 +1,12 @@
+@import url(/css2.css);
+/* 임포트는 항상 먼저 읽힘 */
+
+p {
+    color:white;
+    background-color: red;
+}
+
+h3 {
+    color:white;
+    background-color: black;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스선택자 실습</title>
+
+    <style>
+        h1:hover{
+            color:red;
+        }
+
+        a:active{
+            background-color: blue;
+        }
+
+        input:focus{
+            background-color: orange;
+        }
+
+        .radio:hover{
+            background-color: red;
+        }
+        /* 질문 */
+
+        body input:last-child:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>가상 클래스 선택자 실습</h1>
+    <br>
+    <a href="">click</a>
+    <br>
+    <input type="text">
+    <br>
+    <input class="radio" type="radio">
+</body>
+</html>

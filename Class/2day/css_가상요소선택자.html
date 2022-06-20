@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>가상요소 선택자</title>
+
+    <style>
+        .box::before{
+            content: "앞!"
+        }
+        /* 범위::before */
+        /* content:"" */
+
+        .box::after{
+            content: "뒤!"
+        }
+        /* 범위::after */
+        /* content: "" */
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        1
+        content!
+        3
+
+    </div>
+</body>
+</html>
