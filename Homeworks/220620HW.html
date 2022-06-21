@@ -12,8 +12,9 @@
             background-color: gray;
             width: 100px;
             height: 50px;
-            padding = 10px;
-
+            text-align: center;
+            line-height: 50px;
+            padding: 5px;
         }
 
         .orange {
@@ -21,20 +22,137 @@
             background-color: orange;
             width: 100px;
             height: 50px;
-            padding = 10px;
+            text-align: center;
+            line-height: 50px;
+            padding: 5px;
+        }
+
+        .white {
+            display: inline-block;
+            background-color: white;
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .blue {
+            display: inline-block;
+            background-color: rgba(135, 190, 235, 0.596);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+            }
+
+        
+        .weekodd {
+            display: inline-block;
+            background-color: rgba(0, 88, 170, 0.349);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        
+        .weekeven {
+            display: inline-block;
+            background-color: rgba(201, 215, 221, 0.438);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .sun1 {
+            display: inline-block;
+            background-color: rgba(255, 123, 0, 0.438);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .sun2 {
+            display: inline-block;
+            background-color: rgba(231, 74, 1, 0.438);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .posco {
+            display: inline-block;
+            background-color: rgba(43, 77, 228, 0.904);
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        .posco::after{
+            content :" 포스코"
         }
 
     </style>
 </head>
 <body>
     <div>
-        <div class="gray">월</div>
-        <div class="orange">화</div>
-        <div class="gray">수</div>
-        <div class="orange">목</div>
-        <div class="gray">금</div>
-        <div class="orange">토</div>
-        <div class="gray">일</div>
+        <div>
+            <span class="gray">월
+
+            </span><span class="orange">화
+            </span><span class="gray">수
+            </span><span class="orange">목
+            </span><span class="gray">금
+            </span><span class="orange">토
+            </span><span class="gray">일</span>
+        </div>
+        
+        <div>
+            <span class="white">　
+            </span><span class="white">　
+            </span><span class="white">　
+            </span><span class="white">　
+            </span><span class="posco">1
+            </span><span class="weekeven">2
+            </span><span class="sun1">3
+        </div>
+
+        <div>
+            <span class="blue">4
+            </span><span class="weekodd">5
+            </span><span class="blue">6
+            </span><span class="weekodd">7
+            </span><span class="blue">8
+            </span><span class="weekodd">9
+            </span><span class="sun2">10
+        </div>
+
+        <div>
+            <span class="blue">11
+            </span><span class="weekeven">12
+            </span><span class="blue">13
+            </span><span class="weekeven">14
+            </span><span class="blue">15
+            </span><span class="weekeven">16
+            </span><span class="sun1">17
+        </div>
+
+        <div>
+            <span class="blue">18
+            </span><span class="weekodd">19
+            </span><span class="blue">20
+            </span><span class="weekodd">21
+            </span><span class="blue">22
+            </span><span class="weekodd">23
+            </span><span class="sun2">24
+        </div>
+
+        <div>
+            <span class="blue">25
+            </span><span class="weekeven">26
+            </span><span class="blue">27
+            </span><span class="weekeven">28
+            </span><span class="blue">29
+            </span><span class="weekeven">30
+            </span><span class="sun1">31
+        </div>
     </div>
 </body>
 </html>l
