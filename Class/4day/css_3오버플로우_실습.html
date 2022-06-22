@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <Style>
+
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .p1{
+            overflow: visible;
+            margin-bottom: 10px;
+        }
+
+        
+        .p2{
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        
+        .p3{
+            overflow: scroll;
+            margin-bottom: 10px;
+        }
+
+        
+        .p4{
+            overflow: auto;
+            margin-bottom: 10px;
+        }
+
+        
+        .p5{
+            overflow-x: visible;
+            overflow-y: hidden;
+            margin-bottom: 10px;
+        }
+
+        div>div{
+            width:400px;
+            height: 100px;
+            background-color: orange;
+        }
+    </Style>
+</head>
+<body>
+    <div class="p1">부모 Visible
+        <div class="c1">자식</div>
+    </div>
+
+    <div class="p2">부모 hidden
+        <div class="c2">자식</div>
+    </div>
+
+    <div class="p3">부모 scroll
+        <div class="c3">자식</div>
+    </div>
+
+    <div class="p4">부모 auto
+        <div class="c4">자식</div>
+    </div>
+    
+    <div class="p5">부모 x,y축
+        <div class="c5">자식</div>
+    </div>
+</body>
+</html>

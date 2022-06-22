@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            /* 마우스 커서를 손가락으로 바꿈 */
+            display: inline-block;
+        }
+
+        .opacity {
+            background-color: aqua;
+            opacity: 1;
+        }
+
+        .opacity:hover{
+            opacity: 0;
+            /* opacity : 모습 숨김 / 속성 남음 / 자리 차지 */
+        }
+
+        .visibility:hover{
+            visibility: hidden;
+            /* visibility : 모습 숨김 / 속성 숨김 / 자리 차지 */
+        }
+
+        .display:hover{
+            display:none;
+            /* display " 모습 숨김 / 속성 숨김 / 자리 숨김" */
+        }
+
+
+        .visibility {
+            background-color: greenyellow;
+            visibility: visible;
+        }
+        .display {
+            background-color: dodgerblue;
+        }
+        .last {
+            background-color: violet;
+        }
+
+</style>
+</head>
+<body>
+    <div class="opacity">opacity</div>
+    <div class="visibility">visibility</div>
+    <div class="display">display</div>
+    <div class="last">last</div>
+</body>
+</html>

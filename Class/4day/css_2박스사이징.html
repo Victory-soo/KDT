@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .content-box{
+            background-color: aquamarine;
+            border:10px dashed tomato;
+            padding:10px;
+            box-sizing: content;
+            /* 글자 들어가는 구역 = 100*100 
+               총 영역= 140*140 */
+        }
+
+        .border-box{
+            background-color: lightskyblue;
+            border: 10px dashed tomato;
+            padding: 10px;
+            box-sizing: border-box;
+            /* 글자 들어가는 구역 = 60*60
+               총 영역 = 100*100 */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">content</div>
+    <div class="border-box">border</div>
+</body>
+</html>

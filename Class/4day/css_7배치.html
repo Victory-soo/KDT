@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            position: relative;
+        }
+        .wrap{
+            width: 500px;
+            height: 500px;
+            background-color: navy;
+            position: relative;
+        }
+        
+        .container{
+            width: 300px;
+            background-color: blueviolet;
+            position: relative;
+        }
+
+        .item{
+            background-color: skyblue;
+            border: 4px dashed black;
+        }
+
+        .item1{
+            width: 100px;
+            height: 100px;
+            position: static;
+            /* static : 기준 없음
+               relative : 자신을 기준
+               absolute : 위치상 부모 요소 기준
+                          static 요소 무시
+               fixed : 뷰포트 기준 (광고팝업같이) */
+            top: 30px;
+            left: 30px;
+        }
+
+        .item2{
+            width: 140px;
+            height: 70px;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+        }
+
+        .item3{
+            width: 70px;
+            height: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <!-- div.container>div.item.item$*3 -->
+        <div class="container">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+        </div>
+    </div>
+</body>
+</html>

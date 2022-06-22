@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: gray;
+            position: relative;
+        }
+
+        .item{
+            border:2px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        .item1{
+            background-color: lightcoral;
+            position: relative;
+            left: 50px;
+            top: 30px;
+        }
+
+        .item2{
+            background-color: lightpink;
+            position: absolute;
+            right: 30px;
+            bottom: 100px;
+        }
+
+        .item3{
+            background-color: lightgoldenrodyellow;
+            position: fixed;
+            right: 100px;
+            top: 100px;
+        }
+
+        .item4{
+            background-color: lightgreen;
+            position: absolute;
+            right: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">자기자신 기준</div>
+        <div class="item item2">컨테이너 기준</div>
+        <div class="item item3">뷰포트 기준1</div>
+        <div class="item item4">뷰포트 기준2</div>
+    </div>
+</body>
+</html>

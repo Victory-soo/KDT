@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            margin-bottom: 20px;
+            width: 500px;
+            height: 500px;
+            background-color: lightgray;
+            display: flex;
+            flex-wrap: nowrap;
+
+        }
+
+        .item{
+            width: 100px;
+            height: 100px;
+            border : 4px dashed black;
+            flex-grow : 1;
+            /* 가로로 크기 증가 */
+        }
+
+        .item1{}
+
+        .container1{
+            width: 500px;
+            height: 500px;
+            background-color: lightgray;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .itema{
+            width: 100px;
+            height: 100px;
+            border : 4px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+
+    </div>
+
+    <div class="container1">
+        <div class="itema item1"></div>
+        <div class="itema item2"></div>
+        <div class="itema item3"></div>
+
+    </div>
+</body>
+</html>

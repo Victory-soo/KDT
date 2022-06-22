@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: lightgray;
+            display: flex;
+            margin-bottom: 20px;
+            /* @ flex-direction: row-reverse; */
+            /* row-reverse : 3 2 1 */
+            flex-wrap: nowrap;
+            /* 줄에 맞춰서 크기 조절 */
+
+            /* @justify-content: flex-end; */
+            /* justify-content : flex-start
+                                 flex-end
+                                 center */
+            /* 1 2 3 */
+
+            justify-content: space-around;
+            /* justify-content : space-between
+                                 space-around
+                                 space-evenly */
+
+        }
+
+        .item{
+            width: 100px;
+            height: 100px;
+            border: 3px dashed black;
+            background-color: lightcoral;
+        }
+
+        .container1{
+            width: 500px;
+            height: 500px;
+            background-color: lightgray;
+            display: flex;
+            margin-bottom: 20px;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            /* 넘치는 요소 다음 줄 */
+        }
+
+        .itema{
+            width: 100px;
+            height: 100px;
+            border: 3px dashed black;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <!-- <div class="item item3">4</div>
+        <div class="item item3">5</div> -->
+    </div>
+
+    <div class="container1">
+        <div class="itema item1">1</div>
+        <div class="itema item2">2</div>
+        <div class="itema item3">3</div>
+        <div class="itema item3">4</div>
+        <div class="itema item3">5</div>
+    </div>
+
+
+</body>
+</html>
