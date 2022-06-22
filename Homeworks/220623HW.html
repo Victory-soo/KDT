@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex nav</title>
+
+    <style>
+        body {
+            height: 3000px;
+            background-image: url("https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            background-attachment: fixed;
+            margin: 0;
+        }
+
+        .gradation {
+            left: 20px;
+            height: 3000px;
+            width: 100px;
+            background: linear-gradient(orange, black);
+            position: relative;
+        }
+
+        .container {
+            height: 70px;
+            width: 100%;
+            background-color: rgba(255, 94, 0, 0.884);
+            background-attachment: fixed;
+            display: flex;
+            position: fixed;
+            top: 0px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .item {
+            flex-basis: 150px;
+            height: 50px;
+            border-radius: 30px;
+            font-weight: 700;
+            background-color: rgba(255, 196, 0, 0.822);
+            line-height: 50px;
+            text-align: center;
+            cursor:pointer;
+        }
+
+        .item:hover{
+            background-color: rgba(230, 20, 5, 0.897);
+            color: white;
+        }
+
+        .navi {
+            height: 70px;
+            width: 100%;
+            background-color: rgba(73, 69, 66, 0.911);
+            background-attachment: fixed;
+            display: flex;
+            position: fixed;
+            bottom: 0px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .button {
+            height: 50px;
+            border-radius: 30px;
+            font-weight: 700;
+            line-height: 50px;
+            background-color: rgba(194, 188, 169, 0.712);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .button:nth-child(n){
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+
+        body>.navi>.button4{
+            flex-grow: 2;
+            flex-basis: 0;
+        }
+
+        .button:hover{
+            background-color: rgba(5, 67, 184, 0.767);
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="gradation"></div>
+    <div class="container">
+        <div class="item item1">라이언</div>
+        <div class="item item2">어피치</div>
+        <div class="item item3">죠르디</div>
+        <div class="item item4">콘</div>
+    </div>
+
+    <div class="navi">
+        <div class="button button1">뒤로가기</div>
+        <div class="button button2">앞으로가기</div>
+        <!-- <a href="http://127.0.0.1:5500/Homeworks/220623HW.html"></a> -->
+        <div class="button button3">새로고침</div>
+        <div class="button button4">나가기</div>
+    </div>
+</body>
+</html>
