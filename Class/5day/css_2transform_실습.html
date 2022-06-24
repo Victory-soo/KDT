@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        body>div {
+            width: 100px;
+            height: 100px;
+            background-color: lightgrey;
+            margin-bottom: 20px;
+        }
+
+        div>div {
+            width: 100px;
+            height: 100px;
+            background-color: lightskyblue;
+            margin-bottom: 20px;
+            transition: 1s;
+            font-weight: 700;
+            backface-visibility: hidden;
+        }
+
+        .c1:active {
+            transform: translate(120px,0) rotate(45deg);
+        }
+
+        .c2:active {
+            transform: translateX(100px) scaleX(2);
+        }
+
+        .c3:active {
+            transform: perspective(300px) rotateY(180deg);
+        }
+
+        .c4:active {
+            transform: translate(43px) skewX(-40deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="p1">
+        <div class="c1">1</div>
+    </div>
+
+    <div class="p2">
+        <div class="c2">2</div>
+    </div>
+
+    <div class="p3">
+        <div class="c3">앞면</div>
+    </div>
+
+    <div class="p4">
+        <div class="c4">4</div>
+    </div>
+    
+</body>
+</html>

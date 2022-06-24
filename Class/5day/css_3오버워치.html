@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <style>
+        body {
+            background-image: url("images/bg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container .heroes{
+            max-width: 700px;
+            /* 뷰포트 크기 줄어들면 줄어듬 */
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 100px auto;
+            /* margin: auto 중앙정렬 */
+        }
+
+        .container .heroes .hero {
+            width: 80px;
+            height: 84px;
+            margin: 4px;
+            border: 3px solid white;
+            background-color: gray;
+            transform: skew(-14deg);
+            border-radius: 10%;
+            transition: .3s ease;
+            overflow: hidden;
+        }
+        
+        .container .heroes .hero:hover {
+            transform: skew(-14deg) scale(1.3);
+            background-color: orange;
+            border:3px solid rgb(255, 255, 255);
+            z-index: 1;
+        }
+        
+        .container .heroes .hero .image {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transform: skew(10deg);
+        }
+
+        .container .heroes .hero:nth-child(1) .image{
+            background-image: url("images/hero1.png");
+        }
+
+        .container .heroes .hero:nth-child(2) .image{
+            background-image: url("images/hero2.png");
+        }
+
+        .container .heroes .hero:nth-child(3) .image{
+            background-image: url("images/hero3.png");
+        }
+
+        .container .heroes .hero:nth-child(4) .image{
+            background-image: url("images/hero4.png");
+        }
+
+        .container .heroes .hero:nth-child(5) .image{
+            background-image: url("images/hero5.png");
+        }
+
+        .container .heroes .hero:nth-child(6) .image{
+            background-image: url("images/hero6.png");
+        }
+
+        .container .heroes .hero:nth-child(7) .image{
+            background-image: url("images/hero7.png");
+        }
+
+        .container .heroes .hero:nth-child(8) .image{
+            background-image: url("images/hero8.png");
+        }
+
+        .container .heroes .hero:nth-child(9) .image{
+            background-image: url("images/hero9.png");
+        }
+
+        .container .heroes .hero:nth-child(10) .image{
+            background-image: url("images/hero10.png");
+        }
+
+        .container .heroes .hero:nth-child(11) .image{
+            background-image: url("images/hero11.png");
+        }
+
+        .container .heroes .hero:nth-child(12) .image{
+            background-image: url("images/hero12.png");
+        }
+
+        .container .heroes .hero:nth-child(13) .image{
+            background-image: url("images/hero13.png");
+        }
+
+        .container .heroes .hero:nth-child(14) .image{
+            background-image: url("images/hero14.png");
+        }
+
+        .container .heroes .hero:nth-child(15) .image{
+            background-image: url("images/hero15.png");
+        }
+
+        .container .heroes .hero:nth-child(16) .image{
+            background-image: url("images/hero16.png");
+        }
+
+        .container .heroes .hero:nth-child(17) .image{
+            background-image: url("images/hero17.png");
+        }
+
+        .container .heroes .hero:nth-child(18) .image{
+            background-image: url("images/hero18.png");
+        }
+
+        .container .heroes .hero:nth-child(19) .image{
+            background-image: url("images/hero19.png");
+        }
+
+        .container .heroes .hero:nth-child(20) .image{
+            background-image: url("images/hero20.png");
+        }
+
+        .container .heroes .hero:nth-child(21) .image{
+            background-image: url("images/hero21.png");
+        }
+
+        .container .heroes .hero:nth-child(22) .image{
+            background-image: url("images/hero22.png");
+        }
+
+        .container .heroes .hero:nth-child(23) .image{
+            background-image: url("images/hero23.png");
+        }
+
+        .container .heroes .hero:nth-child(24) .image{
+            background-image: url("images/hero24.png");
+        }
+
+        .container .heroes .hero:nth-child(25) .image{
+            background-image: url("images/hero25.png");
+        }
+
+        .container .heroes .hero:nth-child(26) .image{
+            background-image: url("images/hero26.png");
+        }
+
+        .container .heroes .hero:nth-child(27) .image{
+            background-image: url("images/hero27.png");
+        }
+
+        .container .heroes .hero:nth-child(28) .image{
+            background-image: url("images/hero28.png");
+        }
+
+        .container .heroes .hero:nth-child(29) .image{
+            background-image: url("images/hero29.png");
+        }
+
+        .container .heroes .hero:nth-child(30) .image{
+            background-image: url("images/hero30.png");
+        }
+
+        .container .heroes .hero:nth-child(31) .image{
+            background-image: url("images/hero31.png");
+        }
+
+        .container .heroes .hero:nth-child(32) .image{
+            background-image: url("images/hero32.png");
+        }
+
+        .container .overwatch {
+            max-width: 300px;
+            margin: 0px auto;
+            padding: 10px;
+        }
+
+        .container .overwatch img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container .logo {
+            max-width: 150px;
+            margin: 0px 0px auto auto;
+            padding: 20px;
+        }
+
+        .container .logo img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/Class/5day/images/logo_blizzard.png">
+        </div>
+        <div class="heroes">
+            <div class="hero">
+                <div class="image">
+                    <!-- <img src="images/hero1.png" alt="히어로1" width="80px" height="84px"/> -->
+                </div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+            <div class="hero">
+                <div class="image"></div>
+            </div>
+        </div>
+        <div class="overwatch">
+            <img src="/Class/5day/images/logo_overwatch.png">
+        </div>
+    </div>
+</body>
+
+</html>

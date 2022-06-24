@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transition: width 3s ease .5s;
+                /* width .7s, 
+                background-color 2s ; */
+
+            /*  transition: 속성명 지속시간 타이밍함수 대기시간;
+
+                transition-property: all / 속성이름
+                transition-duration: 0s / 지속시간 
+                transition-timing function: ease(느-빠-느)
+                                            linear(일정)
+                                            ease in(느-빠)
+                                            ease-in-out(조금빠른 느-빠-느)
+                transition-delay: 0s / 대기시간 */
+        }
+
+        div:active{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

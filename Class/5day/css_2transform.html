@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding:20px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+            transition: 1s;
+        }
+
+        div:active {
+            transform: translate(40px, 40px);
+            /* transform: translate(x,y) 이동
+                          translateX(x)
+                          translateY(y)
+                          
+                          scale(x,y) 크기
+                          scaleX(x)
+                          scaleY(y)
+                          
+                          rotate(deg) 회전
+                          -deg 반시계방향
+                          
+                          skew(x,y) 기울임
+                          skewX(deg)
+                          skewY(deg) 
+                          
+                          rotateX(x) 축 회전
+                          rotateY(y)
+                          perspective(px) ratateX(deg) rotateY(deg) 원근*/
+             
+            backface-visibility: visible;
+            /* backface-visibility : visible / hidden 
+                                     뒷면 보임 / 뒷면 숨김*/
+        }
+
+        div.child {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(8, 4, 255);
+            opacity: 50%;
+            z-index: 1;
+            transition: 1s;
+            color:white;
+            font-weight: 700;
+        }
+        div>.child:active {
+            transform: perspective(300px) ratateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="child">child</div>
+    </div>
+</body>
+</html>
