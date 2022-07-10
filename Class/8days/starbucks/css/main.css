@@ -1,0 +1,810 @@
+/* COMMON */
+body {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif;
+    height: 3000px;
+}
+
+/* 스타벅스 페이지에서 컨텐츠 파트는 inner 안에 포함 되므로
+커먼 클래스로 선언하여 반복 사용 */
+.inner {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+} 
+
+.strong{
+    font-weight: 800;
+}
+
+.btn{
+    display: inline-block;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn--reverse{
+    background-color: #00704a;
+    border-color: #00704a;
+    color: white;
+}
+
+.btn--reverse:hover{
+    text-decoration: underline;
+}
+
+.btn--white{
+    border-color: white;
+    color:white;
+    transition: 0.6s;
+}
+
+.btn--white:hover{
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+}
+
+.btn--lightgreen{
+    border-color: #00704a;
+    color: #00704a;
+    transition: 0.6s;
+}
+
+.btn--lightgreen:hover{
+    color: white;
+    background-color: #00704a;
+    text-decoration: underline;
+}
+
+.btn--gold{
+    border-color: #b9813e;
+    color: #b9813e;
+}
+
+.btn--gold:hover{
+    color: white;
+    background-color: #b9813e;
+    text-decoration: underline;
+    transition: 0.6s;
+}
+
+.btn--black{
+    border-color: black;
+    color: black;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #f6f5ef;
+    border-bottom: 1px solid #c8c8c8;
+    top: 0;
+    z-index: 1;
+}
+
+/* inner 가 반복 사용 되므로, 후손 선택자일 경우 겹칠 수 있으므로
+직계 자손 선택자로 변경하여 문제를 미리 방지 */
+header>.inner {
+    background-color: #f6f5ef;
+    height: 120px;
+}
+
+header .inner .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;    
+    margin: auto 0;
+    height: 75px;    
+}
+
+header .inner .logo img {
+    display: block;    
+}
+
+header .inner .sub_menu {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+header .inner .sub_menu .menu {
+    display: flex;    
+}
+
+header .inner .sub_menu .menu li {
+    line-height: 32px;
+}
+
+/* 가상 클래스(not, last-child) / 가상 요소 선택자 동시 사용 */
+header .inner .sub_menu .menu li:not(:last-child)::after {
+    content: "|";
+    font-size: 12px;
+    color: #c8c8c8;
+}
+
+header .inner .sub_menu .menu li a {
+    font-size: 12px;
+    color: #656565;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+header .inner .sub_menu .menu li a:hover {
+    text-decoration: underline;
+}
+
+header .inner .search {
+    position: relative;
+}
+
+header .inner .search input {
+    width: 40px;
+    height: 34px;
+    transition: width 0.4s;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+header .inner .search input:focus {
+    width: 180px;  
+    outline-color: green;  
+}
+
+header .inner .search span {
+    position: absolute;
+    font-size: 24px;
+    height: 24px;
+    top: 0;
+    bottom: 0;
+    right: 3px;
+    margin: auto;
+}
+
+/* MAIN MENU */
+header .inner .main_menu {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+header .inner .main_menu .item {}
+
+header .inner .main_menu .item .item__name {
+    padding: 10px 20px 34px 20px;
+    font-size: 13px;
+}
+
+header .inner .main_menu .item:hover .item__name {
+    background-color: #2c2a29;
+    color: #669900;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+header .main_menu .item .item__contents {
+    /* fixed 를 주어, 뷰포트 전체의 넓이를 사용할 수 있도록 설정 */
+    position: fixed;
+    /* 넓이 100% 선언을 안하면 기존 부모의 크기를 받아오기 때문에 100% 선언하여 뷰포트 전체 넓이를 확보 */
+    width: 100%;
+    /* 기존 부모의 위치를 참고하므로 left: 0 으로 뷰포트 제일 왼쪽으로 위치 */
+    left: 0;
+    display: none;
+}
+
+/* 컨텐츠에 마우스가 올라간 상태에서도 hover 가 유지가 되어야 하므로
+item 전체에 hover 를 걸고 효과를 줄 요소를 뒤에 선택자로 선택 */
+header .main_menu .item:hover .item__contents {
+    display: block;
+}
+
+header .main_menu .item .item__contents .item__contents__menu {
+    background-color: #2c2a29;
+    padding: 20px 0px;
+    width: 100%;    
+}
+
+header .main_menu .item .item__contents .item__contents__menu .inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 요소 내부에 ul, li 태그 중첩이 반복 되므로, 후손 선택자 사용 시 직계가 아닌 요소 까지 선택이 되므로
+직계 자손 선택자를 사용하여 안전하게 처리 */
+header .main_menu .item .item__contents .item__contents__menu .inner>li {
+    width: 200px;
+    padding: 0 20px 0 0;
+}
+
+header .main_menu .item .item__contents .item__contents__menu .inner>li>a {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header .main_menu .item .item__contents .item__contents__menu .inner>li>a:hover {
+    text-decoration: underline;
+}
+
+header .main_menu .item .item__contents .item__contents__menu .inner>li>ul {}
+
+header .main_menu .item .item__contents .item__contents__menu .inner>li>ul>li {
+    font-size: 12px;
+    color: #999;
+    margin: 5px 0;
+}
+
+header .main_menu .item .item__contents .item__contents__menu .inner>li>ul>li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+header .main_menu .item .item__contents .item__contents__additional {
+    background-image: url("../images/main_menu_pattern.jpg");    
+    padding: 20px 0;
+    width: 100%;   
+}
+
+header .main_menu .item .item__contents .item__contents__additional .inner {}
+
+header .main_menu .item .item__contents .item__contents__additional .inner>a {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+header .main_menu .item .item__contents .item__contents__additional .inner>a:hover {
+    text-decoration: underline;
+}
+
+header .main_menu .item .item__contents .item__contents__additional .inner>p {
+    font-size: 12px;
+    color: #669900;
+}
+
+/* BADGES */
+header .badges {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+}
+
+header .badges .badge {}
+
+header .badges .badge>a{}
+
+header .badges .badge>a>img{}
+
+
+/* VISUAL */
+.visual {
+    background-image: url("../images/visual_bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;    
+    margin-top: 120px;
+}
+
+.visual .inner {
+    /* 이미지를 모두 absolute 로 처리할 것이기 때문에 이미지들의 기준점을 되기 위해서
+    미리 inner 에 position: relative; 선언 */
+    position: relative;
+    height: 646px;
+}
+
+.visual .inner .slogan {
+    position: absolute;
+    top: 88px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.visual .inner .slogan>img {}
+
+.visual .inner .slogan>.btn {
+    display: block;
+    /* border: 2px solid #1c3831;
+    border-radius: 3px; */
+    width: 110px;
+    height: 38px;
+    /* box-sizing: border-box;
+    text-align: center; */
+    /* line-height: 38px; */
+    /* color: #1c3831; */
+    /* text-decoration: none; */
+    margin-top: 30px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.visual .inner .slogan>.btn:hover {
+    color: white;
+    text-decoration: underline;
+    background-color: #1c3831;
+    font-weight: bold;
+}
+
+.visual .inner .image {}
+
+.visual .inner .image.item_1 {
+    position: absolute;
+    width: 260px;
+    top: 88px;
+    right: 210px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.visual .inner .image.item_2 {
+    position: absolute;
+    width: 590px;
+    top: 200px;
+    left: 30px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.visual .inner .image.item_3 {
+    position: absolute;
+    width: 370px;
+    bottom: 50px;
+    right: -120px;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.visual .inner:hover .image.item_1 {
+    opacity: 1;
+    /* 트랜지션 딜레이를 통해 순차적으로 보일 수 있도록 처리 */
+    transition-delay: 0.4s;
+}
+
+.visual .inner:hover .image.item_2 {
+    opacity: 1;
+    /* 트랜지션 딜레이를 통해 순차적으로 보일 수 있도록 처리 */
+    transition-delay: 0.8s;
+}
+
+.visual .inner:hover .image.item_3 {
+    opacity: 1;
+    /* 트랜지션 딜레이를 통해 순차적으로 보일 수 있도록 처리 */
+    transition-delay: 1.2s;
+}
+
+.visual .inner:hover .slogan {
+    opacity: 1;
+}
+
+.visual .inner:hover .slogan .btn {
+    opacity: 1;
+    /* 트랜지션 딜레이를 통해 순차적으로 보일 수 있도록 처리 */
+    transition-delay: 1.6s;
+}
+
+/* NOTICE */
+.notice{}
+
+
+.notice .notice_line{
+    position: relative;
+}
+
+.notice .notice_line .bg_left{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #111111;
+}
+
+.notice .notice_line .bg_right{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f6f5ef;
+}
+
+.notice .notice_line .inner{
+    height: 62px;
+    display: flex;
+}
+
+.notice .notice_line .inner__left{
+    position: relative;
+    width: 60%;
+    height: 100%;
+    background-color: #111111;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.notice .notice_line .inner__left h1{
+    font-weight: 700;
+    position: absolute;
+    left: 0px;
+}
+
+.notice .notice_line .inner__left .swiper_container{
+    position: absolute;
+    left: 80px;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.notice .notice_line .inner__left a{
+    position: absolute;
+    right: 20px;
+    color: white;
+}
+
+.notice .notice_line .inner__left a span{
+    font-size: 36px;
+    vertical-align: bottom;
+}
+
+.notice .notice_line .inner__right{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: #f6f5ef;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.notice .notice_line .inner__right h1{
+    font-weight: 700;
+    position: absolute;
+    left: 170px;
+}
+
+.notice .notice_line .inner__right a{
+    position: absolute;
+    right: 20px;
+    color: black;
+}
+
+.notice .notice_line .inner__right a span{
+    font-size: 36px;
+    vertical-align: bottom;
+}
+
+/* REWARDS */
+.rewards {
+    background-color: #1e3932;
+}
+
+.rewards .inner{
+    padding: 30px 0px 40px 0px;
+    display: flex;
+    gap: 20px;
+}
+
+.rewards .inner>a{}
+
+.rewards .inner>a>img{
+    width: 176px;
+    display: block;
+}
+
+.rewards .inner .rewards__items{
+    flex-grow: 1;
+}
+.rewards .inner .rewards__items .rewards__items__register{
+    position: relative;
+    padding: 0 0 12px 0;
+    box-shadow: 0 0.5px #4b615b;
+    /* 줄 더 얇게 사용하기 위해서 */
+    /* border-bottom: 1px solid #4b615b; */
+}
+
+.rewards .inner .rewards__items .rewards__items__register p{
+    color: white;
+    font-size: 17px;
+    display: block;
+}
+
+.rewards .inner .rewards__items .rewards__items__register p.subject{
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.rewards .inner .rewards__items .rewards__items__register .buttons{
+    position: absolute;
+    bottom: 12px;
+    right: 0;
+}
+
+.rewards .inner .rewards__items .rewards__items__card{
+    position: relative;
+    padding-top: 20px;
+}
+
+.rewards .inner .rewards__items .rewards__items__card p{
+    color: white;
+    font-size: 14px;
+    display: block;
+}
+
+.rewards .inner .rewards__items .rewards__items__card .buttons{
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+/* PERU */
+.peru{
+    position: relative;
+    background-image: url("../images/peru_bg.jpg");
+    height: 570px;
+    overflow: hidden;
+}
+
+.peru::before{
+    content: "";
+    position: absolute;
+    background-image: url("../images/peru_bg_left.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: -60px;
+    left: -30px;
+    display: block;
+    width: 450px;
+    height: 500px;
+}
+
+.peru::after{
+    content: "";
+    position: absolute;
+    background-image: url("../images/peru_bg_right.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: -15%;
+    right: -20px;
+    display: block;
+    width: 470px;
+    height: 470px;
+    background-position: right bottom;
+    background-size: contain;
+}
+
+.peru .inner{
+    height: 500px;
+}
+
+.peru .inner .img_product{
+    display: block;
+    position: absolute;
+    width: 310px;
+    top: 85px;
+    left: 265px;
+    transform: translate(-600px);
+    transition: 2.5s;
+    opacity: 0;
+}
+
+.peru .inner:active .img_product{
+    transform: translate(0px);
+    opacity: 1;
+}
+
+.peru .inner .peru_contents{
+    position: absolute;
+    top: 180px;
+    left: 600px;
+    transform: translate(500px);
+    opacity: 0;
+    transition: 2.5s;
+    z-index: 1;
+}
+
+.peru .inner:active .peru_contents{
+    transform: translate(0px);
+    opacity: 1;
+}
+
+.peru .inner .peru_contents .img_text{
+    width: 427px;
+}
+
+.peru .inner .peru_contents a{
+    display: block;
+    width: 107px;
+    margin-top: 40px;
+}
+
+/* INDONESIA */
+.indonesia{
+    background-image: url("../images/indonesia_bg.jpg");
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.indonesia::before{
+    content:"";
+    background-image: url("../images/indonesia_bg_left.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 373px;
+    height: 277px;
+    left: -150px;
+    bottom: -10px;
+    position: absolute;
+    display: block;
+    transition: 0.3s;
+    /* opacity: 0; */
+}
+
+.indonesia .inner .indonesia__img:hover{
+    opacity: 1;
+}
+
+.indonesia::after{
+    content:"";
+    background-image: url("../images/indonesia_bg_right.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 563px;
+    height: 305px;
+    right: -330px;
+    bottom: -20px;
+    position: absolute;
+    display: block;
+    transition: 0.3s;
+    /* opacity: 0; */
+}
+
+.indonesia::after:hover{
+    opacity: 1;
+}
+
+.indonesia .inner{
+    /* position: relative; */
+}
+
+.indonesia .inner .indonesia__title{
+    display: block;
+    position: absolute;
+    width: 496px;
+    top: 130px;
+}
+
+.indonesia .inner .indonesia__img{
+    display: block;
+    position: absolute;
+    right: -500px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.indonesia .inner .btn.btn--gold{
+    display: block;
+    position: absolute;
+    width: 110px;
+    top: 270px;
+    left: 260px;
+}
+
+/* FAVORITE */
+
+.favorite{
+    background-image: url("../images/fav_bg.jpg");
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.favorite .inner{
+    height: 800px;
+}
+
+.favorite .inner .favorite__title1{
+    position: absolute;
+    top: 130px;
+    left: 110px;
+    transform: translate(-500px);
+    transition: 2s;
+}
+
+.favorite .inner .favorite__title2{
+    position: absolute;
+    top: 380px;
+    transform: translate(-500px);
+    transition: 2.5s;
+}
+
+.favorite .inner:hover .favorite__title1,
+.favorite .inner:hover .favorite__title2{
+    transform: translate(0px);
+}
+
+.favorite .inner:hover .btn.btn--white{
+    opacity: 1;
+}
+
+.favorite .inner .favorite__image{
+    position: absolute;
+    right: -100px;
+    top: 100px;
+}
+
+.favorite .inner .btn.btn--white{
+    position: absolute;
+    top: 580px;
+    left: 230px;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    transition: 1s;
+    opacity: 0;
+}
+
+/* MAGAZINE */
+.magazine{
+    background-image: url("../images/magazine_bg.png");
+    position: relative;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 400px;
+    background-position: center;
+    display: block;
+}
+
+.magazine .inner{}
+
+.magazine .inner .magazine__title{
+    position: absolute;
+    left: 50px;
+    top: 100px;
+
+}
+
+.magazine .inner .magazine__img{
+    position: absolute;
+    display: block;
+    right: 60px;
+    top: 0px;
+    background-size: contain;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.magazine .inner .btn.btn--black{
+    position: absolute;
+    top: 230px;
+    left: 350px;
+}
