@@ -84,6 +84,13 @@ a{
     color: black;
 }
 
+.btn--black:hover{
+    color: white;
+    background-color: #111111;
+    text-decoration: underline;
+    transition: 0.6s;
+}
+
 /* HEADER */
 header {
     position: fixed;
@@ -305,6 +312,7 @@ header .badges .badge>a>img{}
     background-position: center;
     width: 100%;    
     margin-top: 120px;
+    overflow: hidden;
 }
 
 .visual .inner {
@@ -500,6 +508,7 @@ header .badges .badge>a>img{}
 /* REWARDS */
 .rewards {
     background-color: #1e3932;
+    overflow: hidden;
 }
 
 .rewards .inner{
@@ -646,6 +655,9 @@ header .badges .badge>a>img{}
     background-image: url("../images/indonesia_bg.jpg");
     position: relative;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
     height: 400px;
 }
 
@@ -671,8 +683,6 @@ header .badges .badge>a>img{}
 .indonesia::after{
     content:"";
     background-image: url("../images/indonesia_bg_right.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 563px;
     height: 305px;
     right: -330px;
@@ -779,8 +789,7 @@ header .badges .badge>a>img{}
     background-repeat: no-repeat;
     overflow: hidden;
     height: 400px;
-    background-position: center;
-    display: block;
+    background-position: bottom;
 }
 
 .magazine .inner{}
@@ -807,4 +816,105 @@ header .badges .badge>a>img{}
     position: absolute;
     top: 230px;
     left: 350px;
+}
+
+/* STORE */
+.store{
+    background-image: url("../images/store_bg.jpg");
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 100%;
+}
+
+.store .inner{
+    height: 300px;
+}
+
+.store .inner .store__img_1{
+    position: absolute;
+    width: 228px;
+    height: 228px;
+    top: 150px;
+    left: 290px;
+    z-index: 1;
+    opacity: 0;
+}
+
+.store .inner .store__img_2{
+    position: absolute;
+    width: 366px;
+    height: 312px;
+    top: 0px;
+    left: 60px;
+    opacity: 0;
+}
+
+.store .inner .store__img_3{
+    position: absolute;
+    left: 520px;
+    top: -60px;
+    width: 343px;
+    height: 142px;
+    opacity: 0;
+}
+
+.store .inner .store__img_4{
+    position: absolute;
+    right: 30px;
+    top: 298px;
+    width: 230px;
+    height: 102px;
+    opacity: 0;
+}
+
+.store .inner .store__title_1{
+    position: absolute;
+    width: 385px;
+    height: 54px;
+    top: 100px;
+    right: 50px;
+    transform: translate(500px);
+}
+
+.store .inner .store__title_2{
+    position: absolute;
+    width: 366px;
+    height: 61px;
+    top: 168px;
+    right: 68px;
+    transform: translate(500px);
+}
+
+.store .inner .btn.btn--black{
+    position: absolute;
+    top: 260px;
+    right: 337px;
+    border-radius: 4px;
+    transform: translate(500px);
+}
+
+.store .inner:hover .store__img_1,
+.store .inner:hover .store__img_2,
+.store .inner:hover .store__img_3,
+.store .inner:hover .store__img_4 {
+    transition: 2.3s ease;
+    opacity: 1;
+}
+
+.store .inner:hover .store__title_1{
+    transition: 2.3s ease;
+    transform: translate(0,0);
+}
+
+.store .inner:hover .store__title_2{
+    transition: 3s ease;
+    transform: translate(0,0);
+}
+
+.store .inner:hover .btn.btn--black{
+    transition: 3.7s ease;
+    transform: translate(0,0);
 }
