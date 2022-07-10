@@ -12,7 +12,7 @@ body {
 커먼 클래스로 선언하여 반복 사용 */
 .inner {
     position: relative;
-    width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
 } 
 
@@ -104,6 +104,7 @@ a{
 .btn--black{
     border-color: black;
     color: black;
+    /* transition: 0.6s; */
 }
 
 .btn--black:hover{
@@ -427,7 +428,7 @@ header .badges .badge>a>img{}
 .visual .inner:hover .slogan .btn.btn--green {
     opacity: 1;
     /* 트랜지션 딜레이를 통해 순차적으로 보일 수 있도록 처리 */
-    transition-delay: 1.6s;
+    transition: opacity 1.6s, color 0.6s, background-color 0.6s;
 }
 
 /* NOTICE */
@@ -934,8 +935,8 @@ header .badges .badge>a>img{}
 }
 
 .store .inner:hover .btn.btn--black{
-    transition: 3.7s ease;
     transform: translate(0,0);
+    transition: transform 3.7s, color 0.6s, background-color 0.6s;
 }
 
 
@@ -957,7 +958,6 @@ footer .inner{
 
 footer .inner .info{
     font-size: 12px;
-    min-width: 1182px;
     height: 214px;
     color: white;
     display: flex;
