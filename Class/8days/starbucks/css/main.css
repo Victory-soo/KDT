@@ -79,7 +79,7 @@ a{
 .btn--green{
     color: #1c3831;
     border: 2px solid #1c3831;
-    transition: 0.6s;
+    /* transition: 0.6s; */
 }
 
 .btn--green:hover{
