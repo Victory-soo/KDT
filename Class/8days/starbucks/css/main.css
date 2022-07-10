@@ -91,13 +91,14 @@ a{
 .btn--gold{
     border-color: #b9813e;
     color: #b9813e;
+    transition: 0.6s;
 }
 
 .btn--gold:hover{
     color: white;
     background-color: #b9813e;
     text-decoration: underline;
-    transition: 0.6s;
+
 }
 
 .btn--black{
@@ -109,7 +110,6 @@ a{
     color: white;
     background-color: #111111;
     text-decoration: underline;
-    transition: 0.6s;
 }
 
 .sbj{
@@ -639,7 +639,7 @@ header .badges .badge>a>img{}
     opacity: 0;
 }
 
-.peru .inner:active .img_product{
+.peru .inner:hover .img_product{
     transform: translate(0px);
     opacity: 1;
 }
@@ -654,7 +654,7 @@ header .badges .badge>a>img{}
     z-index: 1;
 }
 
-.peru .inner:active .peru_contents{
+.peru .inner:hover .peru_contents{
     transform: translate(0px);
     opacity: 1;
 }
