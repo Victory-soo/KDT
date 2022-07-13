@@ -295,7 +295,7 @@ header .main_menu .item .item__contents .item__contents__menu .inner>li>ul>li:ho
 header .main_menu .item .item__contents .item__contents__additional {
     background-image: url("../images/main_menu_pattern.jpg");    
     padding: 20px 0;
-    width: 100%;   
+    width: 100%;
 }
 
 header .main_menu .item .item__contents .item__contents__additional .inner {}
