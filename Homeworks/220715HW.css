@@ -78,6 +78,11 @@ button:active {
 .item {
     padding: 1rem;
     font-size: 25px;
+    border-bottom: 6px #ffffff dashed;
+}
+
+.item:last-child {
+    border-bottom: none;
 }
 
 #msg {
