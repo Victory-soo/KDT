@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: white;
+    color: #2DB400;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Koulen', cursive;
+    border-bottom: 5px #F1F4F7 dashed;
+    font-size: 25px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todo-form {
+    width: 700px;
+    height: 30px;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Koulen', cursive;
+    margin-right: 0.5rem;
+}
+
+input {
+    padding: 0.1rem;
+    width: 348px;
+    height: 44px;
+    background-color: #F1F4F7;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Koulen', cursive;
+    font-size: 20px;
+}
+
+/* input:active {
+    border: none;
+} */
+
+button {
+    border: none;
+    font-size: 20px;
+    background-color: #2DB400;
+    color: white;
+    padding: 0.1rem 1rem;
+    border-radius: 10rem;
+    font-family: 'Koulen', cursive;
+}
+
+button:active {
+    background-color: #207a02;
+}
+
+#todo-list {
+    margin-top: 3rem;
+    list-style: none;
+    width: 300px;
+    padding-left: 2rem;
+    font-family: 'Koulen', cursive;
+    background-color: #F1F4F7;
+    border-radius: 3rem;
+}
+
+.item {
+    padding: 1rem;
+    font-size: 25px;
+}
+
+#msg {
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: red 2px dotted;
+    border-radius: 9px;
+    color: red;
+    display: none;
+    font-family: 'Koulen', cursive;
+}
