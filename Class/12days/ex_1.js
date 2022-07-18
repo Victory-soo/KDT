@@ -11,7 +11,6 @@ table.addEventListener("click", function(e) {
 function writeSchedule() {
     let newDiv = document.createElement("div");
     let text1 = text_content.value;
-    newDiv.className = "pickDay";
     newDiv.textContent = (text1);
     for(i=5; i<=31; i++) {
         if(text_date.value == document.getElementsByTagName("p")[`${i}`].innerText) {
