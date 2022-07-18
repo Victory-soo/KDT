@@ -1,30 +1,31 @@
-const button = document.querySelector("table");
+const table = document.querySelector("table");
+const text_date = document.querySelector("#date");
+const text_content = document.querySelector("#content");
 
-button.addEventListener("click", function(e) {
-    console.log(e.target);
-    document.querySelector("#date").value = e.target.innerText;
-    e.target.classList.add("print");
+table.addEventListener("click", function(e) {
+    if(e.target.tagName === "P") {
+        text_date.value = e.target.innerText;
+    }
 })
 
-const contentBtn = document.querySelector("#content")
-const date = document.querySelector("#date").value
-
 function writeSchedule() {
-    document.querySelector(".print")
-    const print = document.querySelector(".print").append("div");
-    
+    let newDiv = document.createElement("div");
+    let text1 = text_content.value;
+    newDiv.className = "pickDay";
+    newDiv.textContent = (text1);
+    for(i=5; i<=31; i++) {
+        if(text_date.value == document.getElementsByTagName("p")[`${i}`].innerText) {
+            document.getElementsByTagName("p")[`${i}`].classList.add("print");
+            $(".print").parent("td").append(newDiv);
+            text_date.value = "";
+            text_content.value = "";
+            document.querySelector(".print").classList.remove("print");
+        }
+    }
 }
 
-
-// function writeSchedule() {
-//     for(i=0; i<=42; i++) {
-//         if(i == date) {
-//             console.log(document.querySelectorAll(`td:nth-child(${i})`));
-//             const addDiv = document.createElement(div);
-
-//             addDiv.textContent = contentBtn.value;
-//         }
-//     }
-//     const text = content.value
-    
-// };
+table.addEventListener("click", function(e) {
+    if(e.target.tagName === "DIV") {
+        e.target.remove();
+    }
+})
