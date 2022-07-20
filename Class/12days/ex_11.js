@@ -1,4 +1,7 @@
 // 클릭 된 요소를 저장하기 위한 전역 변수
+const calendar = document.querySelector("table");
+const date = document.querySelector("#date");
+const content = document.querySelector("#content");
 let targetEl;
 
 calendar.addEventListener("click", function (e) {
@@ -19,8 +22,7 @@ calendar.addEventListener("click", function (e) {
 
 // 작성 버튼이 클릭 되면 실행되는 함수
 function writeSchedule() {
-  let content = document.querySelector("#content");
-
+  
   let addEl = document.createElement("div");
   addEl.innerText = content.value;
 
