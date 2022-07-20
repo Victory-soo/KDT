@@ -15,14 +15,13 @@ calendar.addEventListener("click", function (e) {
     e.target.remove();
   } else {
     // 테이블 TD가 클릭 되면 TD를 전역 변수에 저장하여 위치 전달
-    date.value = e.target.firstChild.textContent;
+    date.value = e.target.querySelector("p").textContent;
     targetEl = e.target;
   }
 });
 
 // 작성 버튼이 클릭 되면 실행되는 함수
 function writeSchedule() {
-  
   let addEl = document.createElement("div");
   addEl.innerText = content.value;
 

@@ -5,8 +5,13 @@ const text_content = document.querySelector("#content");
 table.addEventListener("click", function(e) {
     if(e.target.tagName === "P") {
         text_date.value = e.target.innerText;
-    }
-})
+    } else if(e.target.tagName === "DIV") {
+    //     e.target.remove();
+    } else {
+        // 테이블 TD가 클릭 되면 TD를 전역 변수에 저장하여 위치 전달
+        date.value = e.target.querySelector("p").textContent;
+        targetEl = e.target;
+}})
 
 function writeSchedule() {
     let newDiv = document.createElement("div");
@@ -21,10 +26,17 @@ function writeSchedule() {
             document.querySelector(".print").classList.remove("print");
         }
     }
-}
 
-table.addEventListener("click", function(e) {
-    if(e.target.tagName === "DIV") {
-        e.target.remove();
-    }
-})
+    newDiv.addEventListener("click", function () {
+        if(newDiv.style.textDecoration === "line-through") {
+            newDiv.style.textDecoration = "";
+        } else {
+            newDiv.style.textDecoration = "line-through";
+        }
+    })
+    
+    newDiv.addEventListener("dblclick", function () {
+        newDiv.remove();
+    })
+
+}
