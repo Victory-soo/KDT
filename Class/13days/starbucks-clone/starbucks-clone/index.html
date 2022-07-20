@@ -43,7 +43,7 @@
     <!-- main -->
     <link rel="stylesheet" href="./css/main.css">
     <script defer src="./js/main.js"></script>
-
+    
 
 </head>
 
@@ -441,14 +441,47 @@
                 <div class="inner__left">
                     <h1>공지사항</h1>
                     <div class="swiper">
-                        공지사항
-                    </div>
-                    <a href="#"><span class="material-symbols-outlined">add_circle</span></a>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">My DT Pass 이용 안내</div>
+                            <div class="swiper-slide">My DT Pass 관련 서비스 점검 안내</div>
+                            <div class="swiper-slide">시스템 개선 및 점검 안내</div>
+                            <div class="swiper-slide">전자 영수증 서비스 서비스 점검 안내</div>
+                            <div class="swiper-slide">스타벅스 e-Gift Card 구매 가능 금액 안내</div>
+                        </div>
+                    </div> 
+                    <a href="javascript:controlAutoplay();"><span class="material-symbols-outlined">add_circle</span></a>
                 </div>
                 <div class="inner__right">
                     <h1>스타벅스 프로모션</h1>
-                    <a href="#"><span class="material-symbols-outlined">expand_circle_down</span></a>
+                    <!-- a 태그가 새로고침 하는걸 막기 위해서 -->
+                    <a href="javascript:void(0);" class="toggle-promotion"><span class="material-symbols-outlined">expand_circle_down</span></a>
                 </div>
+            </div>
+        </div>
+
+
+        <!-- PROMOTION -->
+        <div class="promotion hide">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/promotion_1.jpg" alt="스타벅스 프로모션1">
+                        <a href="#" class="btn btn--black">자세히보기</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/promotion_2.jpg" alt="스타벅스 프로모션2">
+                        <a href="#" class="btn btn--black">자세히보기</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/promotion_3.jpg" alt="스타벅스 프로모션3">
+                        <a href="#" class="btn btn--black">자세히보기</a>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>

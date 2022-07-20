@@ -447,9 +447,15 @@ header .badges .badge {
 .notice .inner .inner__left .swiper {
   position: absolute; 
   left: 80px;
+  height: 62px;
   font-size: 14px;
 }
 
+.notice .inner .inner__left .swiper .swiper-wrapper .swiper-slide {
+  line-height: 62px;
+  height: 62px;
+}
+  
 .notice .inner .inner__left a {
   position: absolute;
   right: 20px;
@@ -485,6 +491,110 @@ header .badges .badge {
 .notice .inner .inner__right span {
   font-size: 36px;
   vertical-align: bottom;
+}
+
+/* NOTICE >> PROMOTION */
+.notice .promotion{
+  height: 659px;
+  background-color: #f6f5ef;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.4s;
+}
+
+.notice .promotion.hide {
+  height: 0px;
+}
+
+.notice .toggle-promotion {
+  transition: 0.5s;
+}
+
+.notice .promotion .swiper{
+  width: calc(819px * 3 + 20px);
+  /* 숫자끼리 따로 써야함 */
+  height: 600px;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+  top: 40px;
+}
+
+.notice .promotion .swiper .swiper-wrapper{
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide{
+  opacity: 0.4;
+  transition: 0.2s;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide-active{
+  opacity: 1;
+}
+
+.notice .promotion .swiper .swiper-wrapper .swiper-slide .btn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  margin: auto;
+  text-align: center;
+  width: 130px;
+}
+
+.notice .promotion .swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.notice .promotion .swiper .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_on.png");
+  background-size: cover;
+  background-color: transparent;
+}
+
+.notice .promotion .swiper .swiper-button-prev {
+  position: absolute;
+  top: 250px;
+  width: 51px;
+  height: 51px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  left: 29%;
+}
+
+.notice .promotion .swiper .swiper-button-prev:after {
+  font-size: 25px;
+  color: #333;
+}
+
+.notice .promotion .swiper .swiper-button-prev:hover {
+  background-color: white;
+  transition: 0.7s;
+}
+
+.notice .promotion .swiper .swiper-button-next {
+  position: absolute;
+  top: 250px;
+  width: 51px;
+  height: 51px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  right: 29%;
+}
+
+.notice .promotion .swiper .swiper-button-next:after {
+  font-size: 25px;
+  color: #333;
+}
+.notice .promotion .swiper .swiper-button-next:hover {
+  background-color: white;
+  transition: 0.7s;
 }
 
 /* REWARDS */
@@ -1000,3 +1110,4 @@ footer .inner .footer__copylight {
 footer .inner .footer__copylight>p {
   line-height: 30px;
 }
+
