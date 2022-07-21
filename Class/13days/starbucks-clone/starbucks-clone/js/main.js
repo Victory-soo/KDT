@@ -100,7 +100,7 @@ window.addEventListener("scroll", function() {
         peruAnimate.classList.add("animate");
     }
 
-    if (scrollYpos > 1200) {
+    if (scrollYpos > 1300) {
         const peruAnimate = document.querySelector(".favorite");
         peruAnimate.classList.add("animate");
     }
