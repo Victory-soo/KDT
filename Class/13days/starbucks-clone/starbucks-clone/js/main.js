@@ -85,7 +85,38 @@ promotionToggleBtn.addEventListener("click", function() {
 
 
 // SCROLL ANIMATION
-let scrollYpos
+let scrollYpos;
 window.addEventListener("scroll", function() {
     scrollYpos = window.scrollY;
+    console.log(scrollYpos);
+
+    if (scrollYpos > 300) {
+        const peruAnimate = document.querySelector(".peru");
+        peruAnimate.classList.add("animate");
+    }
+
+    if (scrollYpos > 830) {
+        const peruAnimate = document.querySelector(".indonesia");
+        peruAnimate.classList.add("animate");
+    }
+
+    if (scrollYpos > 1200) {
+        const peruAnimate = document.querySelector(".favorite");
+        peruAnimate.classList.add("animate");
+    }
+
+    if (scrollYpos > 2200) {
+        const peruAnimate = document.querySelector(".magazine");
+        peruAnimate.classList.add("animate");
+    }
+
+    if (scrollYpos > 2500) {
+        const peruAnimate = document.querySelector(".store");
+        peruAnimate.classList.add("animate");
+    }
 })
+
+window.onload = () => {
+    const visualnner = document.querySelector(".visual .inner");
+    visualnner.classList.add("animate");
+}
