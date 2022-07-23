@@ -16,6 +16,8 @@ searchInputEl.addEventListener("blur", function() {
 });
 
 // SWIPPER
+// https://swiperjs.com/
+
 // NOTICE >> SWIPER
 const swiper = new Swiper(".notice .notice-line .swiper", {
     // Optional parameters
@@ -117,6 +119,6 @@ window.addEventListener("scroll", function() {
 })
 
 window.onload = () => {
-    const visualnner = document.querySelector(".visual .inner");
-    visualnner.classList.add("animate");
+    const visualInner = document.querySelector(".visual .inner");
+    visualInner.classList.add("animate");
 }

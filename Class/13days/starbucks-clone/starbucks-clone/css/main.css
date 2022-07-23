@@ -349,7 +349,7 @@ header .badges .badge {
 }
 
 .visual .inner .slogan .btn--green:hover{
-transition: background-color .6s, color .6s, text-decoration .6s;
+  transition: background-color .6s, color .6s, text-decoration .6s;
 }
 
 .visual .inner.animate .slogan .btn--green{
