@@ -21,7 +21,7 @@
 // todos.firstElementChild.textContent = "Hello";
 // todos.lastElementChild.innerHTML = "<h1>Hello</h1>"
 
-const button  = document.querySelector(".submit");
+const button = document.querySelector(".submit");
 const todos = document.querySelector("#todo-list");
 const todoInput = document.querySelector("#todo-input");
 const msg = document.querySelector("#msg");
@@ -35,11 +35,11 @@ const msg = document.querySelector("#msg");
 button.addEventListener("click", onSubmit);
 function onSubmit(e) {
     e.preventDefault();
-    if(todoInput.value === "") {
-        msg.style.display = 'block';
-        setTimeout(()=> msg.style.display="none", 2000);
+    if (todoInput.value === "") {
+        msg.style.display = "block";
+        setTimeout(() => (msg.style.display = "none"), 2000);
         return;
-    };
+    }
     const li = document.createElement("li");
     li.appendChild(document.createTextNode(todoInput.value));
     li.classList.add("item");
