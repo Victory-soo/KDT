@@ -1,0 +1,335 @@
+
+.more::after, #ac-globalfooter .ac-gf-icon-after::after, #ac-globalfooter .ac-gf-more::after  {
+    padding-left: .3em;
+    top: -.08em;
+}
+
+#ac-globalfooter .ac-gf-icon-after::after{
+	top:0;
+}
+
+.icon-wrapper .icon, .icon-wrapper .more::after, .icon-wrapper .icon-before::before, .icon-wrapper .icon-after::after {
+	position: relative;
+}
+
+.icon-wrapper .icon, .icon-wrapper .icon-after:after, .icon-wrapper .icon-before:before, .icon-wrapper .more:not(.icon-before):after {
+    position: relative;
+}
+
+.small-medium-show {
+    display: none;
+}
+
+@media only screen and (max-width: 1068px) {
+    .small-medium-show {
+        display: block;
+    }
+}
+
+.typography-hero-supercharged {
+    margin: 0 auto;
+}
+
+.app-store-icon {
+    width: 32px;
+    height: 28px;
+}
+
+.section-keyboard .features .overview-icons-icon-touchid-applepay {
+    --p-width: 32px;
+    --p-height:28px
+}
+
+.small-show {
+    display: none;
+}
+
+@media only screen and (max-width: 734px) {
+    .small-show {
+        display: block;
+    }
+}
+
+.section-keyboard .features .feature-list {
+    margin-left: 16px;
+}
+
+@media only screen and (max-width: 1068px) {
+    .section-keyboard .features .feature-list {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-keyboard .features .feature-list {
+        margin-left: 5px;
+    }
+
+}
+
+.section-display .display-tout-row .tout {
+    min-width: 145px;
+}
+
+.section-routers .router-item-environment .accent-green:before {
+    width: 78px;
+    background-size: 78px 48px;
+}
+
+@media only screen and (max-width: 1068px) {
+    .section-routers .router-item-environment .accent-green:before {
+        width: 63px;
+        background-size: 63px 41px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-routers .router-item-environment .accent-green:before {
+        width: 49px;
+        background-size: 49px 34px;
+    }
+}
+
+
+/* router trade-in adjust */
+.router-grid-wrapper .router-item-tradein {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+@media only screen and (max-width: 734px) {
+    .router-grid-wrapper .router-item-tradein {
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+}
+
+@media only screen and (min-width: 735px) {
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        padding-right: 50px;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-copy {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-picture {
+        flex-grow: 1;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-content {
+        margin-bottom: 52px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper {
+        padding-right: 50px;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-content {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 52px;
+        margin-bottom: 52px;
+    }
+}
+
+@media only screen and (min-width: 1069px) {
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper {
+        padding: 0 50px;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-picture {
+        flex-grow: 0;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-content {
+        padding-left: 0;
+        padding-right: 50px;
+        max-width: 500px;
+    }
+}
+
+.section-routers .overview-routers-trade-in {
+    width: 462px;
+    height: 280px;
+    --p-width: 462px;
+    --p-height: 280px;
+}
+
+@media only screen and (max-width: 1068px) {
+
+    .section-routers .overview-routers-trade-in {
+        width: 356px;
+        height: 216px;
+        --p-width: 356px;
+        --p-height: 216px;
+    }
+}
+
+.section-keyboard .features .feature .feature-copy {
+    margin-left:16px;
+}
+
+@media only screen and (max-width: 1068px) {
+    .section-keyboard .features .feature .feature-copy {
+        margin-left:4px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-keyboard .features .feature .feature-copy {
+        margin-left: 0;
+    }
+}
+
+.section-keyboard .features .feature .feature-copy-subhead {
+    margin-left: 0;
+}
+@media only screen and (max-width: 734px) {
+    .section-keyboard .features .feature .feature-copy-subhead {
+        margin-left: 2px;
+    }
+}
+
+
+@media only screen and (max-width: 921px) {
+    .medium.custom-br {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .router-grid-wrapper
+    .router-item-tradein
+    .router-content-wrapper
+    .router-item-content {
+        padding-left: 30px;
+        padding-right: 10px;
+        margin-top: 52px;
+    }
+}
+
+@media only screen and (max-width: 1068px) {
+    .section-hero .hero-static .intro-text header .subhead {
+        max-width: 450px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .typography-headline-standalone.section-headline .headline-gradient {
+        padding-bottom: 10px;
+    }
+    .section-design .subsection-design-hero .heart-bubble-wrapper .heart-bubble-primary,
+    .section-design .subsection-design-hero .heart-bubble-wrapper .heart-bubble-secondary,
+    .section-design .subsection-design-hero .heart-bubble-wrapper .heart-bubble-tertiary {
+        margin-bottom: 10px;
+    }
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper .router-item-content {
+        margin-top: 36px;
+    }
+    .router-item.router-item-tradein .router-item-picture.align-middle {
+        padding-bottom: 0;
+    }
+}
+
+.section-compare .content-wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 1332px;
+}
+
+@media only screen and (max-width: 734px) {
+    .section-camera-audio .overview-camera-audio-camera-hw {
+        --p-width: 320px;
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-display .overview-display-display-hw {
+        --p-width: 320px;
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-keyboard .features .feature .feature-icon-wrapper.lock-unlock {
+        margin-left: 2px;
+    }
+}
+
+.section-keyboard .features .feature .feature-copy {
+    width: 170px;
+}
+
+@media only screen and (max-width: 734px) {
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper {
+        margin-right: 0;
+    }
+    .router-grid-wrapper .router-item-tradein .router-content-wrapper .router-item-content {
+        padding-left:0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1068px) {
+    .section-keyboard .features .feature .feature-icon-wrapper.lock-unlock,
+    .section-keyboard .features .feature .feature-icon-wrapper.password-protected,
+    .section-keyboard .features .overview-icons-icon-touchid-appletv,
+    .section-keyboard .features .overview-icons-icon-touchid-applepay
+    {
+        margin-left: 4px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .section-keyboard .features .feature .feature-icon-wrapper.lock-unlock {
+        margin-left: 2px;
+    }
+    .section-keyboard .features .feature .feature-icon-wrapper.password-protected {
+        margin-left: 1px;
+    }
+    .section-keyboard .features .overview-icons-icon-touchid-appletv {
+        margin-left: -1px;
+    }
+    .section-keyboard .features .overview-icons-icon-touchid-applepay {
+        margin-left: 0;
+    }
+    .section-keyboard .features .feature-apple-pay {
+        margin-top: 0;
+    }
+    .section-keyboard .features .feature {
+        margin-bottom: 18px;
+    }
+    .section-compare .content-wrapper {
+        margin-left: 22px;
+        margin-right: 22px;
+    }
+    .section-compare .content-wrapper {
+        max-width: 374px;
+        /*min-width: 280px;*/
+    }
+}
