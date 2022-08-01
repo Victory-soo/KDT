@@ -1,0 +1,90 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/* font-family: 'Ubuntu', sans-serif; */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Common */
+body {
+  font: 16px/1 "Ubuntu";
+}
+
+/* UI */
+figure {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(25deg, dodgerblue, rgba(71, 255, 255, 0.5));
+}
+figure h1 {
+  position: absolute;
+  top: 7vh;
+  left: 4vw;
+  font-size: 0px;
+}
+figure h1 strong {
+  font-size: 50px;
+  color: white;
+  letter-spacing: 2px;
+}
+figure h1 span {
+  font-size: 20px;
+  color: white;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+figure .menu {
+  position: absolute;
+  top: 8vh;
+  right: 4vw;
+  font-size: 40px;
+  color: white;
+}
+figure section {
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -10vw;
+  margin-top: -32.5vh;
+  border: 5px solid rgba(2, 118, 219, 0.789);
+}
+figure section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+figure section article .inner {
+  width: 100%;
+  height: 100%;
+  padding: 5vh 2.5vw 8vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  background-color: white;
+}
+figure > p {
+  position: absolute;
+  bottom: 7vh;
+  color: white;
+  font-size: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/*# sourceMappingURL=style.css.map */

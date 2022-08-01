@@ -1,0 +1,60 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/* font-family: 'Ubuntu', sans-serif; */
+
+@import "reset";
+
+/* Common */
+body {
+  font: 16px/1 "Ubuntu";
+}
+
+/* UI */
+figure {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(25deg, dodgerblue, rgb(71, 255, 255, 0.5));
+
+  h1 {
+    position: absolute;
+    top: 7vh;
+    left: 4vw;
+    font-size: 0px;
+
+    strong {
+      font-size: 50px;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    span {
+      font-size: 20px;
+      color: white;
+      opacity: 0.8;
+      letter-spacing: 2px;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 8vh;
+    right: 4vw;
+    // i 태그는 글자취급
+    font-size: 40px;
+    color: white;
+  }
+
+  @import "panel";
+
+  > p {
+    position: absolute;
+    bottom: 7vh;
+    color: white;
+    font-size: 20px;
+
+    // 가운데 정렬
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
