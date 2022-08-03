@@ -25,6 +25,107 @@ section {
       background-color: white;
       transform: scale(0.8);
       transition: 1s;
+
+      .pic {
+        width: 15vw;
+        height: 15vw;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: -9999px -9999px;
+
+        &::before,
+        &::after {
+          // 기본적으로 inline 속성 가짐
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-image: inherit;
+          // background-image: url("../img/cardio.jpg");
+        }
+
+        &::before {
+          transform: translate(3%, 7%);
+          filter: blur(20px) brightness(130%);
+        }
+
+        // .dot {
+        //   width: 2.5vw;
+        //   height: 2.5vw;
+        //   position: absolute;
+        //   top: 50%;
+        //   left: 50%;
+        //   transform: translate(-50%, -50%);
+        //   background-color: azure;
+        //   border-radius: 50%;
+        //   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+        //   z-index: 3;
+        // }
+
+        &.on {
+          &::before {
+            animation: rotationSdw 4s linear infinite;
+          }
+
+          &::after {
+            animation: rotation 4s linear infinite;
+          }
+        }
+      }
+
+      .text {
+        width: 15vw;
+        text-align: center;
+        position: absolute;
+        margin-top: 40px;
+        letter-spacing: 2px;
+
+        h2 {
+          margin-bottom: 10px;
+          font-size: 40px;
+          color: rgb(22, 34, 67);
+        }
+
+        p {
+          color: rgba(17, 38, 63, 0.74);
+          font-size: 20px;
+        }
+
+        .control {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 60px;
+
+          li {
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.5s;
+
+            &.play {
+              transform: scale(1.5);
+              opacity: 0.8;
+            }
+
+            &:hover {
+              transform: scale(1.5);
+              opacity: 0.8;
+
+              &.play {
+                transform: scale(1.8);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
     }
 
     &.on {
@@ -33,5 +134,34 @@ section {
         transform: scale(1.1);
       }
     }
+  }
+}
+
+// keyframes
+@keyframes rotation {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translate(0, -40%) rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotationSdw {
+  0% {
+    transform: translate(3%, 7%) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(3%, -33%) rotate(180deg) scale(1.1);
+  }
+
+  100% {
+    transform: translate(3%, 7%) rotate(360deg);
   }
 }

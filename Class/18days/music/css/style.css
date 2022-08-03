@@ -81,9 +81,101 @@ figure section article .inner {
   transform: scale(0.8);
   transition: 1s;
 }
+figure section article .inner .pic {
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: -9999px -9999px;
+}
+figure section article .inner .pic::before, figure section article .inner .pic::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: inherit;
+}
+figure section article .inner .pic::before {
+  transform: translate(3%, 7%);
+  filter: blur(20px) brightness(130%);
+}
+figure section article .inner .pic.on::before {
+  animation: rotationSdw 4s linear infinite;
+}
+figure section article .inner .pic.on::after {
+  animation: rotation 4s linear infinite;
+}
+figure section article .inner .text {
+  width: 15vw;
+  text-align: center;
+  position: absolute;
+  margin-top: 40px;
+  letter-spacing: 2px;
+}
+figure section article .inner .text h2 {
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: rgb(22, 34, 67);
+}
+figure section article .inner .text p {
+  color: rgba(17, 38, 63, 0.74);
+  font-size: 20px;
+}
+figure section article .inner .text .control {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+figure section article .inner .text .control li {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+figure section article .inner .text .control li.play {
+  transform: scale(1.5);
+  opacity: 0.8;
+}
+figure section article .inner .text .control li:hover {
+  transform: scale(1.5);
+  opacity: 0.8;
+}
+figure section article .inner .text .control li:hover.play {
+  transform: scale(1.8);
+  opacity: 1;
+}
 figure section article.on .inner {
   opacity: 1;
   transform: scale(1.1);
+}
+@keyframes rotation {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(0, -40%) rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+@keyframes rotationSdw {
+  0% {
+    transform: translate(3%, 7%) rotate(0deg);
+  }
+  50% {
+    transform: translate(3%, -33%) rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: translate(3%, 7%) rotate(360deg);
+  }
 }
 figure .btnPrev {
   width: 60px;
