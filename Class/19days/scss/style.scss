@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 100px/1 "arial";
+    color: azure;
+
+    &.lower {
+      background-color: violet;
+    }
+
+    &.upper {
+      background-color: yellowgreen;
+      -webkit-mask: url(../src/mask4.png);
+      -webkit-mask-size: 7400% 100%;
+      -webkit-mask-position: 0% 0%;
+
+      &.on {
+        // steps() = 23장중에 1장 빼고
+        animation: mask 1.4s steps(73) forwards;
+      }
+    }
+  }
+}
+
+// keyframes
+@keyframes mask {
+  0% {
+    -webkit-mask-position: 0% 0%;
+  }
+
+  100% {
+    -webkit-mask-position: 100% 100%;
+  }
+}
+
+// 23 30 71 74
