@@ -4,14 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>Mask animation</title>
+
+    <script src="https://kit.fontawesome.com/ebe7817d95.js" crossorigin="anonymous"></script>
     <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <section>
+    <!-- <section>
       <article class="lower">LOWER</article>
       <article class="upper">UPPER</article>
-    </section>
+    </section> -->
+
+    <main>
+      <nav>
+        <h1>Soo<i class="fa-solid fa-star"></i></h1>
+
+        <!--  ul.nav>li*4>h2{title}+p>lorem6 -->
+        <ul id="nav">
+          <li class="on">
+            <h2>01 Mountain</h2>
+            <p>Lorem ipsum dolor sit</br> amet consectetur.</p>
+          </li>
+          <li>
+            <h2>02 Blue Ocean</h2>
+            <p>Quia reprehenderit ullam et quaerat quasi.</p>
+          </li>
+          <li>
+            <h2>03 Sky & Cloud</h2>
+            <p>Soluta optio esse hic sit facilis!</p>
+          </li>
+          <li>
+            <h2>04 City & People</h2>
+            <p>Exercitationem eius nam et doloribus. Perspiciatis.</p>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- section>article*4>video[loop muted autoplay] -->
+      <section>
+        <article>
+          <video src="./src/mountain.mp4" loop="loop" muted="muted" autoplay="autoplay"></video>
+        </article>
+        <article>
+          <video src="./src/sea.mp4" loop="loop" muted="muted" autoplay="autoplay"></video>
+        </article>
+        <article>
+          <video src="./src/sky.mp4" loop="loop" muted="muted" autoplay="autoplay"></video>
+        </article>
+        <article>
+          <video src="./src/city.mp4" loop="loop" muted="muted" autoplay="autoplay"></video>
+        </article>
+      </section>
+    </main>
   </body>
 </html>

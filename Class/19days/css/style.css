@@ -1,12 +1,113 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&family=Permanent+Marker&display=swap");
+/* Reset */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Common*/
+body {
+  background-color: black;
+  widows: 100%;
+  height: 100vh;
+}
+
+/* Nav */
+nav {
+  width: 450px;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  z-index: 4;
+  overflow: hidden;
+}
+nav h1 {
+  display: inline-block;
+  position: absolute;
+  top: 12%;
+  left: 50px;
+  font: 500 40px/1.3 "Orbitron";
+  letter-spacing: 1px;
+  color: white;
+}
+nav h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin-top: 5px;
+}
+
+#nav {
+  width: 100%;
+  top: 30%;
+  left: 0px;
+  position: absolute;
+  font: 600 20px/1.3 "Orbitron";
+}
+#nav li {
+  width: 100%;
+  padding: 30px 50px;
+  position: relative;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: 1.4s;
+  transform-origin: left center;
+}
+#nav li h2 {
+  display: inline-block;
+  font: 600 16px/1 "Orbitron";
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+#nav li h2::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: white;
+  transition: 1.5s;
+}
+#nav li p {
+  font: 600 14px/1 "Orbitron";
+  color: white;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+#nav li.on {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  transform: scale(1.3);
+  opacity: 1;
+}
+#nav li.on h2::after {
+  content: "";
+  width: 100%;
+}
+
+/* Section */
 section {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   overflow: hidden;
 }
 section article {
@@ -15,32 +116,12 @@ section article {
   position: absolute;
   top: 0px;
   left: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font: bold 100px/1 "arial";
-  color: azure;
+  z-index: 1;
 }
-section article.lower {
-  background-color: violet;
-}
-section article.upper {
-  background-color: yellowgreen;
-  -webkit-mask: url(../src/mask4.png);
-  -webkit-mask-size: 7400% 100%;
-  -webkit-mask-position: 0% 0%;
-}
-section article.upper.on {
-  animation: mask 1.4s steps(73) forwards;
-}
-
-@keyframes mask {
-  0% {
-    -webkit-mask-position: 0% 0%;
-  }
-  100% {
-    -webkit-mask-position: 100% 100%;
-  }
+section article video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
