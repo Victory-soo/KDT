@@ -5,18 +5,18 @@ const deg = 360 / len;
 const names = ["cardio", "groove", "happy", "light", "lily", "limes", "pop", "swing"];
 
 for (let i = 0; i < len; i++) {
-  list[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
+    list[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
 
-  const pic = list[i].querySelector(".pic");
-  pic.style.backgroundImage = `url("../music/img/${names[i]}.jpg")`;
+    const pic = list[i].querySelector(".pic");
+    pic.style.backgroundImage = `url("../music/img/${names[i]}.jpg")`;
 
-  const title = list[i].querySelector(".text>h2");
-  title.innerHTML = `${names[i]}`;
+    const title = list[i].querySelector(".text>h2");
+    title.innerHTML = `${names[i]}`;
 
-  const audio = document.createElement("audio");
-  audio.setAttribute("src", `../music/music/${names[i]}.mp3`);
-  audio.setAttribute("loop", "loop");
-  list[i].append(audio);
+    const audio = document.createElement("audio");
+    audio.setAttribute("src", `../music/music/${names[i]}.mp3`);
+    audio.setAttribute("loop", "loop");
+    list[i].append(audio);
 }
 
 const prev = document.querySelector(".btnPrev");
@@ -25,72 +25,72 @@ let num = 0;
 let active = 0;
 
 prev.addEventListener("click", function (e) {
-  frame.style.transform = `rotate(${deg * ++num}deg)`;
+    frame.style.transform = `rotate(${deg * ++num}deg)`;
 
-  if (active === 0) {
-    active = len - 1;
-  } else {
-    active--;
-  }
+    if (active === 0) {
+        active = len - 1;
+    } else {
+        active--;
+    }
 
-  for (let el of list) {
-    el.classList.remove("on");
-  }
-  list[active].classList.add("on");
+    for (let el of list) {
+        el.classList.remove("on");
+    }
+    list[active].classList.add("on");
 });
 
 next.addEventListener("click", function (e) {
-  frame.style.transform = `rotate(${deg * --num}deg)`;
+    frame.style.transform = `rotate(${deg * --num}deg)`;
 
-  if (active === len - 1) {
-    active = 0;
-  } else {
-    active++;
-  }
+    if (active === len - 1) {
+        active = 0;
+    } else {
+        active++;
+    }
 
-  for (el of list) {
-    el.classList.remove("on");
-  }
-  list[active].classList.add("on");
+    for (el of list) {
+        el.classList.remove("on");
+    }
+    list[active].classList.add("on");
 });
 
 let before = -1;
 
 for (let el of list) {
-  const play = el.querySelector(".play");
-  const pause = el.querySelector(".pause");
-  const reload = el.querySelector(".reload");
+    const play = el.querySelector(".play");
+    const pause = el.querySelector(".pause");
+    const reload = el.querySelector(".reload");
 
-  play.addEventListener("click", function (e) {
-    // 클릭한 것에서 가까운 것 찾기
-    e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
-    e.currentTarget.closest("article").querySelector("audio").play();
+    play.addEventListener("click", function (e) {
+        // 클릭한 것에서 가까운 것 찾기
+        e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
+        e.currentTarget.closest("article").querySelector("audio").play();
 
-    if (before === -1) {
-      before = e.currentTarget;
-    } else if (e.currentTarget !== before) {
-      before.closest("article").querySelector("audio").pause();
-      before.closest("article").querySelector(".pic").classList.remove("on");
-      before = e.currentTarget;
-    }
-  });
+        if (before === -1) {
+            before = e.currentTarget;
+        } else if (e.currentTarget !== before) {
+            before.closest("article").querySelector("audio").pause();
+            before.closest("article").querySelector(".pic").classList.remove("on");
+            before = e.currentTarget;
+        }
+    });
 
-  pause.addEventListener("click", (e) => {
-    e.currentTarget.closest("article").querySelector(".pic").classList.remove("on");
-    e.currentTarget.closest("article").querySelector("audio").pause();
-  });
+    pause.addEventListener("click", (e) => {
+        e.currentTarget.closest("article").querySelector(".pic").classList.remove("on");
+        e.currentTarget.closest("article").querySelector("audio").pause();
+    });
 
-  reload.addEventListener("click", function (e) {
-    if (before === -1) {
-      before = e.currentTarget;
-    } else if (e.currentTarget !== before) {
-      before.closest("article").querySelector("audio").pause();
-      before.closest("article").querySelector(".pic").classList.remove("on");
-      before = e.currentTarget;
-    }
+    reload.addEventListener("click", function (e) {
+        if (before === -1) {
+            before = e.currentTarget;
+        } else if (e.currentTarget !== before) {
+            before.closest("article").querySelector("audio").pause();
+            before.closest("article").querySelector(".pic").classList.remove("on");
+            before = e.currentTarget;
+        }
 
-    e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
-    e.currentTarget.closest("article").querySelector("audio").load();
-    e.currentTarget.closest("article").querySelector("audio").play();
-  });
+        e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
+        e.currentTarget.closest("article").querySelector("audio").load();
+        e.currentTarget.closest("article").querySelector("audio").play();
+    });
 }
