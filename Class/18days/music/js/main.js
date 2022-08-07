@@ -1,5 +1,6 @@
 const frame = document.querySelector("section");
 const list = frame.querySelectorAll("article");
+console.log(list);
 const len = list.length;
 const deg = 360 / len;
 const names = ["cardio", "groove", "happy", "light", "lily", "limes", "pop", "swing"];
