@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// .box {
+//   width: 100px;
+//   height: 100px;
+//   background-color: lightblue;
+// }
+
+// .box0 {
+//   width: 100%;
+//   height: 100vh;
+//   background-color: blanchedalmond;
+// }
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  font: bold 100px/100vh "arial";
+  color: black;
+
+  section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &.gray {
+      background-color: gray;
+    }
+
+    &.lightgreen {
+      background-color: lightgreen;
+    }
+
+    &.violet {
+      background-color: violet;
+    }
+
+    &.lightblue {
+      background-color: lightblue;
+    }
+  }
+}

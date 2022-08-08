@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  font: bold 100px/100vh "arial";
+  color: black;
+}
+main section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+main section.gray {
+  background-color: gray;
+}
+main section.lightgreen {
+  background-color: lightgreen;
+}
+main section.violet {
+  background-color: violet;
+}
+main section.lightblue {
+  background-color: lightblue;
+}
+
+/*# sourceMappingURL=style.css.map */
