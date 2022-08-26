@@ -332,6 +332,16 @@
 
 // 서버 구축
 
+/**
+ * 블로그용 서버 API 구성
+ *
+ * GET /posts           목록 가져오기
+ * GET /posts/:id       글 내용 가져오기
+ * POST /posts          새로운 글 올리기
+ * PUT /posts/:id       기존 글 수정하기
+ * DELETE /posts/:id    기존 글 삭제하기
+ */
+
 const http = require('http');
 
 // req(uest) = 브라우저에서 들어온 요청
@@ -339,13 +349,33 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   console.log(req.url);
   // 서버가 정상일 때, 200 (규약)
-  res.statusCode = 200;
-  res.end('Hello, back-end');
+
+  if (req.url === '/posts' && req.method === 'GET') {
+    res.statusCode = 200;
+    console.log('블로그의 글 목록을 보여줄 API 입니다.');
+  } else if (req.url === '/posts/:id' && req.method === 'GET') {
+    res.statusCode = 200;
+    console.log('블로그의 특정 글 내용을 보여줄 API 입니다.');
+  } else if (req.url === '/posts/' && req.method === 'POST') {
+    res.statusCode = 200;
+    console.log('블로그의 새로운 글을 올릴 때 호출할 API 입니다.');
+  } else if (req.url === '/posts/:id' && req.method === 'PUT') {
+    res.statusCode = 200;
+    console.log('블로그의 글을 수정할 때 호출할 API 입니다.');
+  } else if (req.url === '/posts/:id' && req.method === 'DELETE') {
+    res.statusCode = 200;
+    console.log('블로그의 글을 삭제할 때 호출할 API 입니다.');
+  } else {
+    res.statusCode = 400;
+    res.end('NOT FOUND');
+    console.log('해당 API를 찾을 수 없습니다.');
+  }
 });
 
 const PORT = 4000;
 
 server.listen(PORT, () => {
+  console.log('NODEMON WORKING PLEASE');
   console.log(`This server is running on ${PORT} port.`);
 });
 

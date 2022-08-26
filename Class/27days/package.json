@@ -4,7 +4,8 @@
   "description": "victory-soo",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon js/main.js"
+    "server": "nodemon js/main.js",
+    "dev": "nodemon --watch \"./js/*.js\" --exec \"npm run server\""
   },
   "devDependencies": {
     "@types/node": "^18.7.12",
