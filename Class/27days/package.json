@@ -4,7 +4,7 @@
   "description": "victory-soo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Hello, node.js\""
+    "server": "nodemon Class/27days/js/main.js"
   },
   "devDependencies": {
     "@types/node": "^18.7.12",
