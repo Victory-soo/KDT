@@ -343,27 +343,63 @@
  */
 
 const http = require('http');
-
+const posts = [
+  {
+    id: 1,
+    title: '첫 번째 블로그 글',
+    content: '첫 번째 내용입니다.',
+  },
+  {
+    id: 2,
+    title: '두 번째 블로그 글',
+    content: '두 번째 내용입니다.',
+  },
+  {
+    id: 3,
+    title: '세 번째 블로그 글',
+    content: '세 번째 내용입니다.',
+  },
+];
 // req(uest) = 브라우저에서 들어온 요청
 // res(ponse) = 요청에 따른 서버 응답
 const server = http.createServer((req, res) => {
   console.log(req.url);
   // 서버가 정상일 때, 200 (규약)
+  let urlArr = [];
+  let id = -1;
+  urlArr = req.url ? req.url.split('/') : [];
+  if (urlArr.length > 2) {
+    id = urlArr[2];
+    console.log(id);
+  }
 
   if (req.url === '/posts' && req.method === 'GET') {
+    const result = {
+      posts: posts.map((post) => ({
+        id: post.id,
+        title: post.title,
+      })),
+      totalCount: posts.length,
+    };
+
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.statusCode = 200;
+    res.end(JSON.stringify(result));
     console.log('블로그의 글 목록을 보여줄 API 입니다.');
-  } else if (req.url === '/posts/:id' && req.method === 'GET') {
+  } else if (urlArr[1] === 'posts' && req.method === 'GET') {
     res.statusCode = 200;
+    console.log(`Post ID 값은 ${id} 입니다`);
     console.log('블로그의 특정 글 내용을 보여줄 API 입니다.');
-  } else if (req.url === '/posts/' && req.method === 'POST') {
+  } else if (req.url === '/posts' && req.method === 'POST') {
     res.statusCode = 200;
     console.log('블로그의 새로운 글을 올릴 때 호출할 API 입니다.');
-  } else if (req.url === '/posts/:id' && req.method === 'PUT') {
+  } else if (urlArr[1] === 'posts' && req.method === 'PUT') {
     res.statusCode = 200;
+    console.log(`Post ID 값은 ${id} 입니다`);
     console.log('블로그의 글을 수정할 때 호출할 API 입니다.');
-  } else if (req.url === '/posts/:id' && req.method === 'DELETE') {
+  } else if (urlArr[1] === 'posts' && req.method === 'DELETE') {
     res.statusCode = 200;
+    console.log(`Post ID 값은 ${id} 입니다`);
     console.log('블로그의 글을 삭제할 때 호출할 API 입니다.');
   } else {
     res.statusCode = 400;
@@ -385,3 +421,5 @@ server.listen(PORT, () => {
 // 300번대 = 재전송
 // 400번대 = 클라이언트 에러
 // 500번대 = 서버 에러
+
+// http 메소드 localhost:4000/posts
