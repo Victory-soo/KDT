@@ -146,27 +146,48 @@
 
 // Callback -> Promise로 변경
 
+// const fs = require('fs').promises;
+
+// // 자동으로 resolve / reject가 구분이 됨
+// fs.readFile('readmed.txt', 'utf-8')
+//   .then((data) => {
+//     console.log('1번 일꾼', data);
+//     return fs.readFile('readme.txt', 'utf-8');
+//   })
+//   .then((data) => {
+//     console.log('2번 일꾼', data);
+//     return fs.readFile('readme.txt', 'utf-8');
+//   })
+//   .then((data) => {
+//     console.log('3번 일꾼', data);
+//     return fs.readFile('readme.txt', 'utf-8');
+//   })
+//   .then((data) => {
+//     console.log('4번 일꾼', data);
+//     return fs.readFile('readme.txt', 'utf-8');
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//     console.log('Error');
+//   });
+
+// =========================================================
+
+// async function = 동기 함수
+// await = resolve 값을 얻을 때까지 기다린다.
+//         기다렸다가 resolve 값을 data에 넣고 다음 실행
+
 const fs = require('fs').promises;
 
-// 자동으로 resolve / reject가 구분이 됨
-fs.readFile('readmed.txt', 'utf-8')
-  .then((data) => {
-    console.log('1번 일꾼', data);
-    return fs.readFile('readme.txt', 'utf-8');
-  })
-  .then((data) => {
-    console.log('2번 일꾼', data);
-    return fs.readFile('readme.txt', 'utf-8');
-  })
-  .then((data) => {
-    console.log('3번 일꾼', data);
-    return fs.readFile('readme.txt', 'utf-8');
-  })
-  .then((data) => {
-    console.log('4번 일꾼', data);
-    return fs.readFile('readme.txt', 'utf-8');
-  })
-  .catch((err) => {
-    console.log(err);
-    console.log('Error');
-  });
+async function main() {
+  let data = await fs.readFile('readme.txt', 'utf-8');
+  console.log('1번', data);
+  data = await fs.readFile('readme.txt', 'utf-8');
+  console.log('2번', data);
+  data = await fs.readFile('readme.txt', 'utf-8');
+  console.log('3번', data);
+  data = await fs.readFile('readme.txt', 'utf-8');
+  console.log('4번', data);
+}
+
+main();
