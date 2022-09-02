@@ -11,30 +11,28 @@
 const posts = [
   {
     id: 1,
-    title: '첫 번째 블로그 글',
-    content: '첫 번째 내용입니다.',
+    title: '첫번째 블로그 글',
+    content: '첫번째 내용입니다.',
   },
   {
     id: 2,
-    title: '두 번째 블로그 글',
-    content: '두 번째 내용입니다.',
+    title: '두번째 블로그 글',
+    content: '두번째 내용입니다',
   },
   {
     id: 3,
-    title: '세 번째 블로그 글',
-    content: '세 번째 내용입니다.',
+    title: '세번째 블로그 글',
+    content: '세번째 내용',
   },
 ];
 
-// callback: ({중괄호 값 return})
-// url + method 비교 후 맞으면 callback 함수 실행
-
 const routes = [
+  // 블로그 목록을 가져오는 API
   {
     url: '/posts',
     method: 'GET',
     id: 'undefined',
-    callback: () => ({
+    callback: async () => ({
       statusCode: 200,
       body: {
         posts: posts.map((post) => ({
@@ -46,7 +44,7 @@ const routes = [
     }),
   },
 
-  //   특정 ID의 블로그 글을 가져오는 API
+  // 특정 ID의 블로그 글을 가져오는 API
   {
     url: '/posts',
     method: 'GET',
@@ -56,21 +54,26 @@ const routes = [
       if (!id) {
         return {
           statusCode: 404,
-          body: 'Not Found',
+          body: 'Not found',
         };
       }
+
       const result = posts.find((post) => post.id === id);
 
       if (!result) {
         return {
           statusCode: 404,
-          body: 'ID Not Found',
+          body: 'ID Not found',
         };
       }
 
-      return { statusCode: 200, body: result };
+      return {
+        statusCode: 200,
+        body: result,
+      };
     },
   },
+
   // 새로운 글을 쓰는 API
   {
     url: '/posts',
@@ -84,11 +87,12 @@ const routes = [
       });
       return {
         statusCode: 200,
-        body: 'Post is uploaded',
+        body: 'post is uploaded',
       };
     },
   },
-  //   특정 글을 수정하는 API
+
+  // 수정하는 API
   {
     url: '/posts',
     method: 'PUT',
@@ -97,25 +101,30 @@ const routes = [
       if (!id) {
         return {
           statusCode: 404,
-          body: 'Not Found',
+          body: 'Not found',
         };
       }
+
       const result = posts.find((post) => post.id === id);
 
       if (!result) {
         return {
           statusCode: 404,
-          body: 'ID Not Found',
+          body: 'Not found',
         };
       }
+
       const modifyPost = newPost;
       modifyPost.id = id;
       posts[id - 1] = modifyPost;
-
-      return { statusCode: 200, body: newPost };
+      return {
+        statusCode: 200,
+        body: modifyPost,
+      };
     },
   },
-  //    삭제하는 API
+
+  // 삭제하는 API
   {
     url: '/posts',
     method: 'DELETE',
@@ -124,21 +133,23 @@ const routes = [
       if (!id) {
         return {
           statusCode: 404,
-          body: 'Not Found',
+          body: 'Not found',
         };
       }
+
       const result = posts.find((post) => post.id === id);
 
       if (!result) {
         return {
           statusCode: 404,
-          body: 'ID Not Found',
+          body: 'Not found',
         };
       }
+
       posts.splice(id - 1, 1);
       return {
         statusCode: 200,
-        body: '글이 삭제되었습니다.',
+        body: 'post deleted',
       };
     },
   },
