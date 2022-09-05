@@ -102,7 +102,7 @@ app.use('/users', userRouter);
 app.use('/posts', postRouter);
 
 userRouter.get('/', (req, res) => {
-  res.send('User List');
+  res.send(USER);
 });
 
 userRouter.post('/:name', (req, res) => {
