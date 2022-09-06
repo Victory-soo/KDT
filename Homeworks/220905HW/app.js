@@ -13,19 +13,20 @@ const PORT = 4000;
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-const userRouter = require('./routes/users');
+const postRouter = require('./routes/posts');
 
-app.use('/users', userRouter);
+app.use('/posts', postRouter);
 
-// throw err 받음 / 순서 error, req, res, next
 app.use((err, req, res, next) => {
   console.log(err.stack);
   res.status(err.statusCode);
-  // err.message = 'ID Not Found.'
   res.end(err.message);
 });
 
-// public 폴더 연결 (css + js)
+// app.use((req, res) => {
+//   console.log(putTitle);
+// });
+
 app.use(express.static('public'));
 
 // ================================================================
