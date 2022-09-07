@@ -1,0 +1,57 @@
+* {
+  /* /* padding: 0; */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a6dff;
+  color: white;
+  /* -webkit-text-stroke: 2px black; */
+  position: relative;
+}
+
+h1.titleList {
+  font-size: 70px;
+  position: absolute;
+  left: 50vw;
+  transform: translate(-50%, 50%);
+}
+
+h2.total {
+  position: fixed;
+  top: 90vh;
+  left: 90vw;
+}
+
+p.title {
+  font-size: 40px;
+}
+
+p.content {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+ul {
+  position: absolute;
+  top: 5vh;
+  left: 50vw;
+  transform: translate(-50%, 50%);
+}
+
+button {
+  position: absolute;
+  top: 70vh;
+  left: 50vw;
+  transform: translate(-50%, 50%);
+  width: 100px;
+  height: 60px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(194, 194, 194);
+}
