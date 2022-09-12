@@ -36,7 +36,7 @@
         </li>
         <% } %>
         <% } else { %>
-        <li>글 정보가 없습니다.</li>
+        <li>The post does not exist.</li>
         <% } %>
       </ul>
     </div>
@@ -47,6 +47,8 @@
 
 <script>
   function deleteArticle(title) {
+    const yesorno = confirm('Do you really want to delete it?')
+    if (yesorno) {
     fetch(`http://localhost:4000/posts/${title}`, {
       method: 'delete',
       headers: {
@@ -56,6 +58,7 @@
       location.reload();
     })
   }
+}
 </script>
 
 </html>
