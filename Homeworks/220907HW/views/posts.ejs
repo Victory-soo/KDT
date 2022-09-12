@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soo-Log</title>
+  <link rel="stylesheet" href="/css/post.css">
+  <script defer src="./js/test.js"></script>
+</head>
+
+<body>
+  <div class="box">
+  <div class="wrapper">
+    <div class="header">
+      <h1>Soo-Log</h1>
+      <h2>Welcome !</h2>
+    </div>
+
+    <div class="addBlock">
+      <a class="btn btn--green" href="/posts/add">+Write</a>
+    </div>
+
+    <h2 class="total">Total Logs - <%= postCounts %></h2>
+
+    <div class="contentBlock">
+      <ul>
+        <% if(postCounts > 0) { %>
+        <% for(let i = 0; i < postCounts; i++) {%>
+        <li>
+          <p class="title"><%= ARTICLE[i].title%></p>
+          <p class="content"><%= ARTICLE[i].content%></p>
+          <a class="btn btn--blue" href="/posts/modify/<%= ARTICLE[i].title %>">Edit</a>
+          <a class="btn btn--red" href="#" onclick="deleteArticle('<%= ARTICLE[i].title %>')">Delete</a> 
+        </li>
+        <% } %>
+        <% } else { %>
+        <li>글 정보가 없습니다.</li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+<script>
+  function deleteArticle(title) {
+    fetch(`http://localhost:4000/posts/${title}`, {
+      method: 'delete',
+      headers: {
+        'Content-type': 'application/json'
+      },
+    }).then((res) => {
+      location.reload();
+    })
+  }
+</script>
+
+</html>
