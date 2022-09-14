@@ -54,7 +54,7 @@ body {
   font-size: 30px;
 }
 
-.labelContent ~ input {
+.labelContent ~ textarea {
   font-family: 'Noto Serif KR', serif;
   width: 100%;
   height: 300px;

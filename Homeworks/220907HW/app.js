@@ -9,20 +9,20 @@ const app = express();
 const PORT = 4000;
 
 // ================================================================
+// body-parser 코드
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// ================================================================
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const router = require('./routes/index');
 const userRouter = require('./routes/users');
 const postRouter = require('./routes/posts');
-// const modifyRouter = require('./routes/modify');
 
 app.use('/', router);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
-// app.use('/posts/modify', modifyRouter);
 
 app.use((err, req, res, next) => {
   console.log(err.stack);
