@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Hello, Express Service</h1>
+  <h2><a href="/users">Move to User service.</a></h2>
+  <h2><a href="/posts">Move to Post service.</a></h2>
+</body>
+
+<script>
+  console.log(document.cookie);
+  // document.cookie = "user=soo; expires=Fri, 16 Sep 2022 05:26:00 GMT; path=/"
+  // document.cookie = "test=test; expires=15 sep 2022 13:30:00 GMT; path=/"
+  // console.log(document.cookie);
+
+  window.onload = () => {
+    if (document.cookie) alert(`Front-end Cookie : ${document.cookie}`)
+    if ('<%= alert %>' === 'true') alert('Back-end Cookie : <%= alert %>')
+  }
+</script>
+
+</html>

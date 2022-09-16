@@ -11,7 +11,17 @@ const uri =
 
 const mongoClient = require('./mongo');
 
-router.get('/', async (req, res) => {
+function isLogin(req, res, next) {
+  if (req.session.login || req.user) {
+    next();
+  } else {
+    res.statusCode = 300;
+    // res.send('Login required. <br><a href="/login">로그인 페이지로 이동</a>');
+    res.redirect('/login');
+  }
+}
+
+router.get('/', isLogin, async (req, res) => {
   // [Callback]
   // MongoClient.connect(uri, (err, db) => {
   //   const data = db.db('board').collection('post');
@@ -27,16 +37,20 @@ router.get('/', async (req, res) => {
   const cursor = client.db('board').collection('post');
   const ARTICLE = await cursor.find({}).toArray();
   const postCounts = ARTICLE.length;
-  res.render('posts', { ARTICLE, postCounts });
+  res.render('posts', {
+    ARTICLE,
+    postCounts,
+    userId: req.session.userId ? req.session.userId : req.user.id,
+  });
 });
 
 router.get('/add', (req, res) => {
   res.render('add', {});
 });
 
-router.get('/modify/:title', (req, res) => {
+router.get('/modify/:title', isLogin, (req, res) => {
   MongoClient.connect(uri, (err, db) => {
-    const data = db?.db('board').collection('post');
+    const data = db.db('board').collection('post');
 
     data.findOne({ title: req.params.title }, (err, result) => {
       if (err) {
@@ -50,7 +64,7 @@ router.get('/modify/:title', (req, res) => {
   });
 });
 
-router.post('/title/:title', async (req, res) => {
+router.post('/title/:title', isLogin, async (req, res) => {
   if (req.body.title) {
     // [Callback]
     // MongoClient.connect(uri, (err, db) => {
@@ -93,10 +107,11 @@ router.post('/title/:title', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', isLogin, async (req, res) => {
   if (req.body) {
     if (req.body.title && req.body.content) {
       const newPost = {
+        id: req.session.userId,
         title: req.body.title,
         content: req.body.content,
       };
@@ -130,7 +145,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:title', async (req, res) => {
+router.delete('/:title', isLogin, async (req, res) => {
   // [Callback]
   // MongoClient.connect(uri, (err, db) => {
   //   const data = db?.db('board').collection('post');
