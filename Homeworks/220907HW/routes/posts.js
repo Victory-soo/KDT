@@ -23,6 +23,7 @@ const login = require('./login');
 // }
 
 router.get('/', login.isLogin, async (req, res) => {
+  console.log(req.user);
   // [Callback]
   // MongoClient.connect(uri, (err, db) => {
   //   const data = db.db('board').collection('post');
@@ -62,6 +63,7 @@ router.post('/write', async (req, res) => {
           : req.user?.id
           ? req.user?.id
           : req.signedCookies.user,
+        userName: req.user?.name ? req.user?.name : req.user?.id,
         title: req.body.title,
         content: req.body.content,
       };

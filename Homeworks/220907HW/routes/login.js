@@ -11,7 +11,9 @@ const isLogin = (req, res, next) => {
     next();
   } else {
     res.statusCode = 300;
-    res.send('Login required. <br><a href="/login">로그인 페이지로 이동</a>');
+    res.send(
+      'Login required. <br><a href="/login">로그인 페이지로 이동</a> <br> <a href="/">메인 페이지로 이동</a>'
+    );
   }
 };
 
@@ -45,4 +47,15 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
   });
 });
+
+router.get('/auth/naver', passport.authenticate('naver'));
+
+router.get(
+  '/auth/naver/callback',
+  passport.authenticate('naver', {
+    successRedirect: '/posts',
+    failureRedirect: '/',
+  })
+);
+
 module.exports = { router, isLogin };

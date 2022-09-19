@@ -4,11 +4,11 @@ const express = require('express');
 
 const fs = require('fs');
 
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+// const LocalStrategy = require('passport-local').Strategy;
 require('dotenv').config();
 
 const mongoClient = require('./routes/mongo');
@@ -47,45 +47,48 @@ app.set('views', 'views');
 
 app.use(express.static('public'));
 // ================================================================
-passport.use(
-  new LocalStrategy(
-    {
-      usernameField: 'id',
-      passwordField: 'pw',
-    },
-    async (id, pw, cb) => {
-      const client = await mongoClient.connect();
-      const userCursor = client.db('board').collection('users');
-      const idResult = await userCursor.findOne({ id });
-      if (idResult !== null) {
-        if (idResult.pw === pw) {
-          cb(null, idResult);
-        } else {
-          cb(null, false, { message: 'Wrong password.' });
-        }
-      } else {
-        cb(null, false, { message: 'Not exist ID.' });
-      }
-    }
-  )
-);
+// passport.use(
+//   new LocalStrategy(
+//     {
+//       usernameField: 'id',
+//       passwordField: 'pw',
+//     },
+//     async (id, pw, cb) => {
+//       const client = await mongoClient.connect();
+//       const userCursor = client.db('board').collection('users');
+//       const idResult = await userCursor.findOne({ id });
+//       if (idResult !== null) {
+//         if (idResult.pw === pw) {
+//           cb(null, idResult);
+//         } else {
+//           cb(null, false, { message: 'Wrong password.' });
+//         }
+//       } else {
+//         cb(null, false, { message: 'Not exist ID.' });
+//       }
+//     }
+//   )
+// );
 
-passport.serializeUser((user, cb) => {
-  cb(null, user.id);
-});
+// passport.serializeUser((user, cb) => {
+//   cb(null, user.id);
+// });
 
-passport.deserializeUser(async (id, cb) => {
-  const client = await mongoClient.connect();
-  const userCursor = client.db('board').collection('users');
-  const result = await userCursor.findOne({ id });
-  if (result !== null) cb(null, result);
-});
+// passport.deserializeUser(async (id, cb) => {
+//   const client = await mongoClient.connect();
+//   const userCursor = client.db('board').collection('users');
+//   const result = await userCursor.findOne({ id });
+//   if (result !== null) cb(null, result);
+// });
 
 const router = require('./routes/index');
 const userRouter = require('./routes/users');
 const postRouter = require('./routes/posts');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const passportRouter = require('./routes/passport');
+
+passportRouter();
 
 app.use('/', router);
 app.use('/users', userRouter);
