@@ -4,17 +4,18 @@ const express = require('express');
 
 const fs = require('fs');
 
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+require('dotenv').config();
 
 const mongoClient = require('./routes/mongo');
 
 const app = express();
-
-const PORT = 4000;
+const PORT = process.env.PORT;
+// const PORT = 4000;
 
 // ================================================================
 // body-parser 코드
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // cookie-parser 코드
-app.use(cookieParser());
+app.use(cookieParser('soo'));
 
 // session 코드
 app.use(
@@ -90,7 +91,7 @@ app.use('/', router);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
 app.use('/register', registerRouter);
-app.use('/login', loginRouter);
+app.use('/login', loginRouter.router);
 
 app.use((err, req, res, next) => {
   console.log(err.stack);
