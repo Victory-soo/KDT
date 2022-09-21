@@ -12,7 +12,7 @@
 <body>
   <div class="box">
     <h1>Write !</h1>
-    <form action="/posts/write" method="POST">
+    <form action="/posts/write" method="POST" enctype='multipart/form-data'>
       <div>
         <label class="labelTitle">Title</label></br>
         <input type="text" name="title" required>
@@ -21,6 +21,10 @@
         <label class="labelContent">Content</label></br>
         <!-- <input type="text" name="content"> -->
         <textarea name="content" id="content" cols="30" rows="10" required></textarea>
+      </div>
+      <div>
+        <label class="form_img">Upload images</label></br>
+        <input type="file" name="img">
       </div>
 
       <button class="btn btn--green" type="submit">Submit</button>

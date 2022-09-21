@@ -15,7 +15,7 @@
     <div class="wrapper">
       <div class="header">
         <h1>Soo-Log</h1>
-        <h2>User : <%= userId %> </br> Welcome !</h2>
+        <h2>User : <%= userName %> </br> Welcome !</h2>
       </div>
 
       <div class="addBlock">
@@ -33,6 +33,11 @@
           <li>
             <p class="title"><%= ARTICLE[i].title%></p>
             <p class="content"><%= ARTICLE[i].content%></p>
+            <p class="content">
+              <% if (ARTICLE[i].img != null) { %>
+              <img src="./uploads/<%= ARTICLE[i].img %>" width="500">
+              <% } %>
+            </p>
             <p class="content">by. <%= ARTICLE[i].userName ? ARTICLE[i].userName : ARTICLE[i].id %></p>
             <% if (ARTICLE[i].id === userId) { %>
             <a class="btn btn--blue" href="/posts/modify/<%= ARTICLE[i].title %>">Edit</a>

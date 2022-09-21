@@ -4,7 +4,11 @@ const express = require('express');
 
 const router = express.Router();
 
+const fs = require('fs');
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
+
+const multer = require('multer');
 
 const uri =
   'mongodb+srv://victory-soo:zxc01234@cluster0.zt1kzsb.mongodb.net/?retryWrites=true&w=majority';
@@ -13,6 +17,25 @@ const mongoClient = require('./mongo');
 
 const login = require('./login');
 
+// ==================================================
+// multer - 파일 업로드
+const dir = './uploads';
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, dir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '_' + Date.now());
+  },
+});
+
+const limits = {
+  fileSize: 1024 * 1024 * 2,
+};
+
+const upload = multer({ storage, limits });
+
+// ==================================================
 // function login.isLogin(req, res, next) {
 //   if (req.session.login || req.user || req.signedCookies.user) {
 //     next();
@@ -47,6 +70,7 @@ router.get('/', login.isLogin, async (req, res) => {
       : req.user?.id
       ? req.user?.id
       : req.signedCookies.user,
+    userName: req.user?.name ? req.user?.name : req.user?.id,
   });
 });
 
@@ -54,7 +78,9 @@ router.get('/write', (req, res) => {
   res.render('write');
 });
 
-router.post('/write', async (req, res) => {
+router.post('/write', login.isLogin, upload.single('img'), async (req, res) => {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+  console.log(req.file);
   if (req.body) {
     if (req.body.title && req.body.content) {
       const newPost = {
@@ -66,6 +92,7 @@ router.post('/write', async (req, res) => {
         userName: req.user?.name ? req.user?.name : req.user?.id,
         title: req.body.title,
         content: req.body.content,
+        img: req.file ? req.file.filename : null,
       };
 
       // [Callback]

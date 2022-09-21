@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatting service</title>
+</head>
+
+<body>
+  <input type="text" id="msg">
+  <a href="javascript:void(0)" onclick="send()">전송</a>
+  <ol id="chat"></ol>
+</body>
+
+<script>
+  // Web-socket
+  let ws = new WebSocket('ws://localhost:3000');
+
+  const inputEl = document.getElementById('msg');
+  const chat = document.getElementById('chat');
+
+  function send() {
+    const msg = inputEl.value;
+    ws.send(msg);
+    inputEl.value = "";
+  }
+
+  ws.onmessage = (evnet) => {
+    const msgEl = document.createElement('li');
+    msgEl.innerHTML = event.data;
+    chat.appendChild(msgEl)
+  }
+
+  //   ws.onopen = (event) => {
+  //     ws.send('I am CLIENT.')
+  //   }
+
+  //   ws.onmessage = (event) => {
+  //     console.log('Server says = ', event.data);
+  //   }
+
+  //   ws.onerror = (event) => {
+  //     console.log('Error!')
+  //   }
+</script>
+
+</html>

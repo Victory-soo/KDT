@@ -46,6 +46,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(express.static('public'));
+app.use('/uploads', express.static('uploads'));
 // ================================================================
 // passport.use(
 //   new LocalStrategy(
@@ -87,14 +88,16 @@ const postRouter = require('./routes/posts');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const passportRouter = require('./routes/passport');
+const chatRouter = require('./routes/chat');
 
 passportRouter();
 
 app.use('/', router);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
-app.use('/register', registerRouter);
+app.use('/register', registerRouter.router);
 app.use('/login', loginRouter.router);
+app.use('/chat', chatRouter);
 
 app.use((err, req, res, next) => {
   console.log(err.stack);
