@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import './App.css';
 import GlobalStyle from './components/GlobalStyle';
 import Start from './components/Start';
+import { useSelector } from 'react-redux';
+import Mbti from './components/Mbti';
 
 const Main = styled.main`
   box-sizing: border-box;
@@ -13,12 +15,12 @@ const Main = styled.main`
 `;
 
 function App() {
+  const page = useSelector((state) => state.mbti.page);
+
   return (
     <>
       <GlobalStyle />
-      <Main>
-        <Start />
-      </Main>
+      <Main>{page === 0 ? <Start /> : <Mbti />}</Main>
     </>
   );
 }
